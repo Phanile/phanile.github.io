@@ -1,0 +1,764 @@
+body{
+	margin: 0;
+}
+
+p{
+	margin-block-start: 0px;
+	margin-block-end: 0px;
+	margin-bottom: 0;
+}
+
+/*----------------------------------Header-----------------------------------------*/
+
+.header{
+	z-index: 10;
+	position: fixed;
+	color: #FFF;
+	transition: .5s;
+	overflow: hidden;
+	max-height: 60px;
+	transition: all .5s, background-color .15s .35s, color 0s .4s;
+}
+
+#header-back{
+	z-index: 9;
+	height: 0%;
+	width: 100%;
+	position: absolute;
+	background-color: #1C1C1C;
+	margin-left: -15px;
+	transition: height .2s .02s, background-color .15s .35s;
+}
+
+#header{
+	z-index: 11;
+	height: 60px;
+	display: flex;
+	align-items: center;
+}
+
+	#header h3{
+		z-index: 12;
+		margin-right: 40px;
+		color: inherit;
+		font-family: "Century Gothic";
+		font-size: 21px;
+		letter-spacing: 1px;
+		opacity: .9;
+		cursor: pointer;
+	}
+
+	#header .phone{
+		margin-left: auto;
+	}
+
+	#header svg{
+		z-index: 12;
+		margin-left: 25px;
+	}
+
+	.header .header-icon{
+		transition: 0s .4s;
+	}
+
+	.header:hover .header-icon{
+		transition: .5s;
+	}
+
+.header:hover{
+	transition: all 1.25s ease .02s, background-color .005s;
+	color: #1C1C1C;
+	background-color: #FFF;
+	box-shadow: 0 0 12px 0 rgba(0,0,0,0.08);
+}
+
+.header:hover #header-back{
+	transition: all .2s .02s;
+	background-color: #FFF;
+}
+
+#header-line{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	width: 0%;
+	border-top: 1px #D2D2D2 solid;
+	opacity: 0%;
+	transition: all .4s .1s, opacity 0.001s .399s;
+}
+
+.header:hover #header-line{
+	width: 70%;
+	opacity: 100%;
+	transition: all .4s .1s, opacity 0s .001s;
+}
+
+#header-open{
+	display: flex;
+}
+
+	.categories{
+		transition: opacity .5s;
+		margin-top: 12px;
+		width: 140px;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 12px;
+		opacity: 0;
+	}
+
+	.artists{
+		transition: opacity .5s;
+		margin-top: 12px;
+		margin-left: 22px;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 12px;
+		opacity: 0;
+	}
+
+	.head-text{
+		opacity: .8;
+		padding-top: 12px;
+		padding-bottom: 12px;
+		color: inherit;
+		font-family: "Century Gothic";
+		font-size: 18px;
+		letter-spacing: 0.86px;
+		line-height: 22px;
+		padding-left: 10px;
+		margin-left: -10px;
+		padding-right: 10px;
+		word-break: break-word;	}
+
+	.contact{
+		transition: opacity .5s;
+		margin-top: 25px;
+		margin-left: auto;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 25px;
+		text-align: right;
+		opacity: 0;
+	}
+
+	.second{
+		margin-top: 5px;
+	}
+
+	.con{
+		padding: 0px;
+	}
+
+	.kek{
+		margin-top: 20px;
+	}
+
+.header:hover .categories{
+	transition: opacity .5s .15s;
+	opacity: .8;
+}
+
+.header:hover .artists{
+	transition: opacity .5s .2s;
+	opacity: .8;
+}
+
+.header:hover .contact{
+	transition: opacity .5s .25s;
+	opacity: .8;
+}
+
+.head-text:hover{
+	text-decoration: none;
+	background: rgba(0, 0, 0, .05);
+	color: #000000;
+	opacity: .8;
+}
+
+.con:hover{
+	color: #F79753;
+	background: none;
+}
+
+#menu{
+	display: none;
+}
+
+/*----------------------------------Header mobile-----------------------------------------*/
+
+@media only screen and (max-width: 992px){
+
+	#menu{
+	  position: absolute;
+	  z-index: 10;
+
+	}
+
+	.header svg{
+		display: none;
+	}
+
+	.header h3{
+		display: none;
+	}
+
+	.header{
+		max-height: 110px;
+		transition: 0s;
+	}
+
+
+
+	#header{
+		height: 110px;
+	}
+
+	#menu{
+		position: absolute;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: space-around;
+		right: 30px;
+		top: 30px;
+		height: 50px;
+		width: 50px;
+		padding: 9px;
+		background-color: #1C1C1C;
+		border: 0px solid rgba(224, 224, 224, .8);
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	#menu:focus{
+		outline: none;
+	}
+
+	.menu-block:focus{
+		outline: none;
+	}
+
+	.menu-block{
+		height: 4px;
+		border-radius: 9px;
+		background-color: #E0E0E0;
+		width: 32px;
+	}
+
+	.header:hover #header-back{
+		background-color: transparent;
+	}
+
+	.header:hover #header-line{
+		width: 100%;
+	}
+
+	.header:hover{
+		transition: 0s;
+	}
+
+	.header:focus{
+		background-color: transparent;
+	}
+
+	#header-back{
+		display: none;
+	}
+
+	.contact{
+		display: none;
+	}
+
+	.categories, .artists{
+		transition: 0s;
+	}
+
+	.head-text{
+		font-size: 14px;
+		padding-bottom: 7px;
+		padding-top: 7px;
+		transition: 0s;
+	}
+
+	.mobile{
+		max-height: 9000px;
+		transition: all 1.25s ease .02s, background-color .005s;
+		color: #1C1C1C;
+		background-color: #FFF;
+		box-shadow: 0 0 12px 0 rgba(0,0,0,0.08);
+	}
+
+	.mobile #header-line{
+		width: 100%;
+		opacity: 100%;
+		transition: all .4s .1s, opacity 0s .001s;
+	}
+
+	.mobile .categories, .mobile .artists{
+		transition: opacity .5s .15s;
+		opacity: .8;
+	}
+
+}
+
+/*----------------------------------Middle-----------------------------------------*/
+
+#middle{
+	background-image: url(../data/middle.jpg);
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 800px;
+	box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.4);
+}
+
+	#middle h1{
+		margin-top: 280px;
+		color: #F2F2F2;
+		font-family: Bebas Neue Bold;
+		font-size: 148px;
+		letter-spacing: 9.95px;
+		vertical-align: middle;
+	}
+
+	#middle h3{
+		color: #F2F2F2;
+		font-family: "Century Gothic";
+		font-size: 32px;
+		letter-spacing: 2.15px;
+	}
+
+	#middle .row{
+		height: 100%;
+	}
+
+	#middle .col-md-6{
+		height: 100%;
+		/*border: 2px solid gray;*/
+	}
+
+/*----------------------------------Categories-----------------------------------------*/
+
+#categories{
+	height: auto;
+	margin-top: 80px;
+}
+
+	#categories h2{
+		color: #333;
+		font-family: Bebas Neue Bold;
+		font-size: 48px;
+		letter-spacing: 3.23px;
+		line-height: 48px;
+	}
+
+	#categories .row{
+		height: auto;
+	}
+
+	#categories .col-md-3{
+		margin-top: 30px;
+		height: auto;
+		/*border: 1px solid lightgray;*/
+	}
+
+	.category-card{
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 255px;
+		border-radius: 7px;
+		box-shadow: 2px 2px 8px 0 rgba(0,0,0,0.3);
+		display: flex;
+		transition: .1s;
+		color: #F2F2F2;
+		font-size: 40px;
+	}
+
+		#categories p{
+			width: 100%;
+			background: rgba(0,0,0,0.56);
+			font-family: Bebas Neue Bold;
+			color: inherit;
+			letter-spacing: 2.69px;
+			text-align: center;
+			align-self: flex-end;
+			margin-bottom: 0;
+			border-radius: 0px 0px 7px 7px;
+		}
+
+		@media only screen and (max-width: 1200px){
+			.category-card{height: 210px}
+		}
+		@media only screen and (max-width: 992px){
+			.category-card{height: 150px}
+			#categories p{font-size: 26px}
+		}
+
+/*----------------------------------Artist-----------------------------------------*/
+
+#artist{
+	background-image: url(../data/artist.png);
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 622px;
+	margin-top: 100px;
+	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.5);
+	display: flex;
+	align-items: center;
+}
+
+	#artist .content{
+		/*border: 1px solid #FFF;*/
+		height: 382px;
+		position: relative;
+	}
+
+		#artist h1{
+			color: white;
+			font-family: "Bebas Neue Bold";
+			font-size: 86px;
+			letter-spacing: 5.78px;
+			line-height: 86px;
+		}
+
+			#artist span{
+				color: #F79753;
+			}
+
+		#artist p{
+			color: #F2F2F2;
+			font-family: Corbel;
+			font-size: 28px;
+			letter-spacing: 1.88px;
+			line-height: 28px
+		}
+
+		#artist .morebtn{
+			position: absolute;
+			box-sizing: border-box;
+			height: 67px;
+			width: 182px;
+			border-radius: 4px;
+			border: 2px solid #FFF;
+			align-self: flex-end;
+			bottom: 0;
+			right: 0;
+			text-align: center;
+			transition: .15s;
+		}
+
+			.morebtn a{
+				height: 100%;
+				width: 100%;
+				font-family: "Century Gothic";
+				font-size: 32px;
+				letter-spacing: 2.15px;
+				line-height: 67px;
+				text-decoration: none;
+				display: block;
+				color: #F79753;
+				transition: .3s;
+			}
+
+/*----------------------------------Our choise-----------------------------------------*/
+
+#choise{
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+	#choise h2{
+		color: #333;
+		font-family: Bebas Neue Bold;
+		font-size: 48px;
+		letter-spacing: 3.23px;
+		line-height: 48px;
+	}
+
+	#choise .picture{
+		background-image: url(../data/esmerald.jpg);
+		background-position: center top;
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 215px;
+		border-radius: 7px;
+		margin-top: 40px;
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.6);
+		text-align: right;
+		transition: .5s;
+	}
+
+		#choise .overlay{
+			z-index: 1;
+			height: 100%;
+			width: 100%;
+			margin-left: 15px;
+			background: rgb(0,0,0);
+			background: linear-gradient(238deg, rgba(0,0,0,0.65) 0%, rgba(0,78,94,0) 66%, rgba(0,212,255,0) 100%);
+			border-radius: 0px 7px 7px 0px;
+			display: flex;
+			align-items: center;
+		}
+
+		#choise .content{
+			height: 180px;
+			position: relative;
+		}
+
+			#choise h3{
+				z-index: 2;
+				color: #FFF;
+				font-family: "Century Gothic";
+				font-size: 42px;
+				letter-spacing: 2.82px;
+				line-height: 51px;
+				margin-bottom: 0px;
+			}
+
+			#choise p{
+				z-index: 2;
+				color: #F79753;
+				font-family: "Century Gothic";
+				font-size: 36px;
+				font-weight: 700;
+				letter-spacing: 2.42px;
+				line-height: 44px;
+			}
+
+			#choise .buybtn{
+				position: absolute;
+				right: 15px;
+				bottom: 10px;
+				box-sizing: border-box;
+				height: 44px;
+				width: 118px;
+				border-radius: 4px;
+				border: 2px solid #FFF;
+				text-align: center;
+				transition: .3s;
+			}
+
+				.buybtn a{
+					display: block;
+					height: 100%;
+					width: 100%;
+					font-family: "Century Gothic";
+					font-size: 24px;
+					font-weight: 700;
+					letter-spacing: 1.61px;
+					line-height: 44px;
+					text-decoration: none;
+					color: #F79753;
+					transition: .15s;
+				}
+
+/*----------------------------------Footer-----------------------------------------*/
+
+#footer{
+	background-color: #1C1C1C;
+	box-shadow: 0 -2px 8px 0 rgba(0,0,0,0.5);
+	height: 216px;
+	display: flex;
+	align-items: center;
+}
+
+	#footer .content{
+		height: 180px;
+	}
+
+		#footer .row{
+			height: 100%;
+		}
+		
+			#footer .col-md-3{
+				display: flex;
+				flex-direction: column;
+			}
+
+				#footer h3{
+					color: #F79753;
+					font-family: Corbel;
+					font-size: 24px;
+					font-weight: 700;
+					letter-spacing: 3.42px;
+					line-height: 24px;
+				}
+
+				#footer a{
+					text-decoration: none;
+					color: #FFF;
+					padding-top: 2px;
+					font-family: Century Gothic;
+					font-size: 16px;
+					letter-spacing: 2.56px;
+					word-break: break-word;
+				}
+
+				#footer a:hover{
+					color: #FFB377;
+				}
+
+				#footer .col-md-3 a{
+					display: block;
+				}
+
+				#footer .check svg{
+					margin-right: 8px;
+				}
+
+				#footer .icon{
+					margin-top: 8px;
+					display: flex;
+					align-items: center;
+				}
+
+					#footer .icon svg{
+						margin-top: 0px;
+					}
+
+					#footer .icon a{
+						padding-top: 3px;
+					}
+
+				#footer .icons{
+					display: flex;
+					align-items: left;
+				}
+
+				#footer .icons .icon{
+					margin-right: 8px;
+				}
+
+				#footer .icons .icon a{
+					display: block;
+					height: 100%;
+				}
+
+			#footer .col-md-4{
+				display: flex;
+				flex-direction: column;
+			}
+
+				#footer .col-md-4 #name{
+					color: #FFF;
+					font-family: Corbel;
+					font-size: 28px;
+					font-weight: 700;
+					letter-spacing: 1.88px;
+					line-height: 28px;
+					position: absolute;
+					bottom: 0;
+				}
+
+				#footer .first{
+					margin-top: 8px;
+				}
+
+/*----------------------------------Text-----------------------------------------*/
+
+@font-face {
+	font-family: Bebas Neue Bold; /* Гарнитура шрифта */
+	src: url(../data/Bebas_Neue_Bold.ttf); /* Путь к файлу со шрифтом */
+}
+
+@media only screen and (max-width: 767px) {
+
+	#middle{
+		height: 520px;
+	}
+
+	#middle h1{
+		margin-top: 100px;
+		font-size: 96px;
+	}
+
+	#middle h3{
+		font-size: 24px;
+	}
+
+	#artist .content{
+		height: 480px;
+	}
+
+	.category-card{
+		padding-top: 0;
+		height: 180px;
+	}
+
+	#choise .overlay{
+		/*background: linear-gradient(238deg, rgba(0,0,0,0.75) 0%, rgba(0,212,255,0) 100%);*/
+	}
+
+	#choise .buybtn{
+		display: none;
+	}
+
+	#footer{
+		display: none;
+	}
+
+	#artist a:hover{text-decoration: none; color: #F79753}
+	#artist a:link{text-decoration: none}
+	#artist a:active{text-decoration: none}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+	#footer a{
+		font-size: 13px;
+		padding-top: 4px;
+		letter-spacing: 0px;
+	}
+
+	#footer .icons{
+		margin-top: -5px;
+	}
+}
+
+@media only screen and (max-width: 520px){
+	#middle h1{
+		font-size: 64px;
+	}
+
+	#middle h3{
+		font-size: 22px;
+	}
+}
+
+/*----------------------------------Animation-----------------------------------------*/
+
+.button:hover{
+	background: #F79753;
+	transform: scale(1.05);
+	color: #FFF;
+	box-shadow: 0 2px 16px 0 rgba(0,0,0,.8);
+}
+
+	.button a:hover{
+		color: #FFF;
+		text-decoration: none;
+	}
+	
+.button:active{
+	color: #FFF;
+	transform: scale(0.99);
+}
+
+#choise .picture:hover{
+	background-position: 0px -20px;
+}
+
+#categories .category-card:hover{
+	transform: scale(1.05);
+	color: #F79753;
+	box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.7);
+	font-size: 42px;
+}
+
+	#categories .category-card:active{
+	transform: scale(1.03);
+	color: #F79753;
+	box-shadow: 2px 2px 12px 0 rgba(0,0,0,0.6);
+}

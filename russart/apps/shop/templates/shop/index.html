@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<head>
+	<title>Art</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styles/main_style.css">
+	<script type="text/javascript" src='scripts/main_script.js'></script>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+<!----------------------------------------Header---------------------------------------->
+
+	<div class="container-fluid header">
+		<div id="header-back"></div>
+		<button id="menu">
+				<div class="menu-block"></div>
+				<div class="menu-block"></div>
+				<div class="menu-block"></div>
+		</button>
+		<div class="container" id="header">
+			<h3>Categories</h3>
+			<h3>Artists</h3>
+			<svg class="phone" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+				width="24" height="24"
+				viewBox="0 0 172 172"
+				style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#FFFFFF" class="header-icon"><path d="M134.2675,161.68c-0.05375,0 -0.1075,0 -0.16125,0c-25.85375,-0.84656 -56.14187,-25.9075 -77.01031,-46.78937c-20.89531,-20.88188 -45.95625,-51.18344 -46.7625,-76.91625c-0.29562,-9.03 21.86281,-25.08781 22.09125,-25.24906c5.75125,-4.00438 12.13406,-2.58 14.75438,1.04812c1.77375,2.45906 18.57062,27.90969 20.39812,30.79875c1.89469,2.99656 1.6125,7.45781 -0.7525,11.9325c-1.30344,2.48594 -5.63031,10.09156 -7.65937,13.63906c2.19031,3.1175 7.98187,10.76344 19.94125,22.72281c11.97281,11.95937 19.60531,17.76437 22.73625,19.95469c3.5475,-2.02906 11.15312,-6.35594 13.63906,-7.65937c4.4075,-2.33813 8.84187,-2.63375 11.86531,-0.77938c3.09063,1.89469 28.47406,18.77219 30.81219,20.39813c1.96187,1.38406 3.225,3.74906 3.48031,6.50375c0.24188,2.78156 -0.61812,5.72437 -2.40531,8.29094c-0.14781,0.215 -16.0175,22.10469 -24.96688,22.10469z"></path></g></g></svg>
+			<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+				width="24" height="24"
+				viewBox="0 0 172 172"
+				style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#FFFFFF" class="header-icon"><path d="M124.02813,18.40938c-10.88438,0 -21.23125,4.3 -29.025,11.95938l-9.00312,9.00313l-9.00312,-9.00313c-7.79375,-7.79375 -18.00625,-11.95938 -29.025,-11.95938c-11.01875,0 -21.23125,4.3 -29.025,11.95938c-7.65937,7.79375 -11.95937,18.00625 -11.95937,29.025c0,11.01875 4.3,21.23125 11.95937,28.89062l9.675,9.675c1.6125,1.6125 4.16563,1.6125 5.64375,0c1.6125,-1.6125 1.6125,-4.16562 0,-5.64375l-9.675,-9.675c-6.18125,-6.18125 -9.675,-14.5125 -9.675,-23.24687c0,-8.73437 3.35938,-17.06562 9.675,-23.24688c6.18125,-6.18125 14.5125,-9.675 23.24688,-9.675c8.73438,0 17.06563,3.35938 23.24688,9.675l11.825,11.825c1.6125,1.6125 4.16563,1.6125 5.64375,0l11.825,-11.825c12.9,-12.9 33.72813,-12.9 46.49375,0c6.18125,6.18125 9.675,14.5125 9.675,23.24688c0,8.73437 -3.35937,17.06563 -9.675,23.24687l-54.15313,54.55625c-1.74688,1.74687 -4.16562,2.6875 -6.71875,2.6875c-2.55313,0 -4.8375,-0.94063 -6.58437,-2.6875l-17.87188,-17.7375c-1.6125,-1.6125 -4.16562,-1.6125 -5.64375,0c-1.6125,1.6125 -1.6125,4.16562 0,5.64375l17.87188,17.87187c3.35938,3.35938 7.65937,5.10625 12.3625,5.10625c4.70313,0 9.00313,-1.88125 12.3625,-5.10625l54.69063,-54.69062c7.79375,-7.79375 11.95937,-18.00625 11.95937,-29.025c0,-11.01875 -4.3,-21.23125 -11.95937,-29.025c-7.92812,-7.65938 -18.275,-11.825 -29.15937,-11.825z"></path></g></g></svg>
+			<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+				width="24" height="24"
+				viewBox="0 0 172 172"
+				style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#FFFFFF" class="header-icon"><path d="M12.09375,14.78125c-2.28438,0 -4.03125,1.74687 -4.03125,4.03125c0,2.28438 1.74687,4.03125 4.03125,4.03125h9.40625v99.4375c0,7.39063 6.04688,13.4375 13.4375,13.4375h67.1875c2.28437,0 4.03125,-1.74687 4.03125,-4.03125c0,-2.28438 -1.74688,-4.03125 -4.03125,-4.03125h-67.1875c-2.95625,0 -5.375,-2.41875 -5.375,-5.375v-86h117.31042c1.74687,0 3.35833,0.8052 4.29895,2.28333c1.075,1.47812 1.34375,3.2271 0.67188,4.8396l-18.40833,55.36145c-2.01562,6.04688 -7.52552,10.07813 -13.97552,10.07813h-75.11615c-2.28437,0 -4.03125,1.74688 -4.03125,4.03125c0,2.28437 1.74688,4.03125 4.03125,4.03125h75.11615c9.80937,0 18.54322,-6.3151 21.63385,-15.58697l18.40833,-55.36407c1.34375,-4.16562 0.67397,-8.6 -1.87915,-12.09375c-2.55312,-3.49375 -6.58647,-5.6427 -10.88647,-5.6427h-117.17395v-9.40625c0,-2.28438 -1.74687,-4.03125 -4.03125,-4.03125zM34.9375,143.78125c-7.39062,0 -13.4375,6.04688 -13.4375,13.4375c0,7.39063 6.04688,13.4375 13.4375,13.4375c7.39063,0 13.4375,-6.04687 13.4375,-13.4375c0,-7.39062 -6.04687,-13.4375 -13.4375,-13.4375zM102.125,143.78125c-7.39062,0 -13.4375,6.04688 -13.4375,13.4375c0,7.39063 6.04688,13.4375 13.4375,13.4375c7.39063,0 13.4375,-6.04687 13.4375,-13.4375c0,-7.39062 -6.04687,-13.4375 -13.4375,-13.4375zM34.9375,151.84375c2.95625,0 5.375,2.41875 5.375,5.375c0,2.95625 -2.41875,5.375 -5.375,5.375c-2.95625,0 -5.375,-2.41875 -5.375,-5.375c0,-2.95625 2.41875,-5.375 5.375,-5.375zM102.125,151.84375c2.95625,0 5.375,2.41875 5.375,5.375c0,2.95625 -2.41875,5.375 -5.375,5.375c-2.95625,0 -5.375,-2.41875 -5.375,-5.375c0,-2.95625 2.41875,-5.375 5.375,-5.375z"></path></g></g></svg>
+		</div>
+		<hr id="header-line" />
+		<div id="header-open" class="container">
+			<div class="categories">
+				<a class="head-text" href="#">Landscape</a>
+				<a class="head-text" href="#">Black & white</a>
+				<a class="head-text" href="#">Abstract</a>
+				<a class="head-text" href="#">Portrait</a>
+				<a class="head-text" href="#">Realism</a>
+				<a class="head-text" href="#">Cubism</a>
+				<a class="head-text" href="#">Modern</a>
+			</div>
+			<div class="artists">
+				<a class="head-text" href="#">Sarine Carlile</a>
+				<a class="head-text" href="#">Jason Voorhes</a>
+				<a class="head-text" href="#">Pudge Yakovlev</a>
+				<a class="head-text" href="#">Veronica Hovard</a>
+				<a class="head-text" href="#">Bobi Cotic</a>
+			</div>
+			<div class="contact">
+				<a class="con head-text" href="tel:+79871260069">+7-968-665-04-83</a>
+				<a class="second con head-text" href="tel:+79278515414">+7-932-589-34-28</a>
+				<a class="con kek head-text" href="mailto:sayfulloev0472@gmail.com">russianart@gmail.com</a>
+				<a class="second con head-text" href="mailto:sayfulloev04@mail.ru">scicenfist@gmail.com</a>
+			</div>
+		</div>
+	</div>
+<!----------------------------------------Middle---------------------------------------->
+
+	<div class="container-fluid" id="middle">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<h1 class="text-center">ART FOR ALL</h1><h3 class="text-center">Explore yourself with our paintings</h3>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+	</div>
+
+<!----------------------------------------Categories---------------------------------------->
+
+	<div class='container' id='categories'>
+		<h2>CATEGORIES</h2>
+		<div class="row">
+			<div class="col-md-3"><div class="category-card" style="background-image: url(data/landscape-full.jpg);"><p>landscape</p></div></div>
+			<div class="col-md-3"><div class="category-card" style="background-image: url(data/abstract-full.jpg);"><p>abstract</p></div></div>
+			<div class="col-md-3"><div class="category-card" style="background-image: url(data/black-and-white.jpg);"><p>blackwhite</p></div></div>
+			<div class="col-md-3"><div class="category-card" style="background-image: url(data/portrait-full.jpg);"><p>portrait</p></div></div>
+		</div>
+	</div>
+
+<!----------------------------------------Artist---------------------------------------->
+
+	<div class="container-fluid" id="artist">
+		<div class="container content">
+			<h1>SARINE <span>CARLILE</span></h1>
+			<p>Our first and head artist</p>
+			<div class="morebtn button"><a href="#">More</a></div>
+		</div>
+	</div>
+
+<!----------------------------------------Our choise---------------------------------------->
+
+	<div class='container' id='choise'>
+		<h2>OUR CHOISE</h2>
+		<div class="container picture">
+			<div class="overlay">
+				<div class="container content">
+				<h3>Esmerald</h3>
+				<p>$1299</p>
+				<div class="buybtn button"><a href="#">Buy</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!----------------------------------------Footer---------------------------------------->
+
+	<div class='container-fluid' id="footer">
+		<div class="container content">
+			<div class="row">
+				<div class="col-md-4">
+					<a href="#" class="first">About us</a>
+					<a href="#">Privacy policy</a>
+					<a href="#" id="name">RussArt©</a>
+				</div>
+				<div class="col-md-2"></div>
+				<div class="col-md-3">
+					<h3 class="first">Contact us</h3>
+					<a href="tel:+79871260069">+7-968-665-04-83</a>
+					<a href="tel:+79278515414">+7-932-589-34-28</a>
+					<a href="mailto:sayfulloev0472@gmail.com">russianart@gmail.com</a>
+					<a href="mailto:sayfulloev04@mail.ru">scicenfist@gmail.com</a>
+					<div class="icons">
+						<a href="https://vk.com" target="_blank">
+							<div class="icon">
+								<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+								width="26" height="26"
+								viewBox="0 0 172 172"
+								style=" fill:#000000;"><g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none" fill-rule="nonzero"></path><g fill="#ffffff" fill-rule="evenodd"><path d="M140.70613,0h-104.55408c-18.55409,0 -36.15204,14.54868 -36.15204,33.07692v104.60577c0,18.52824 17.59796,34.31731 36.15204,34.31731h104.57993c18.52824,0 31.26803,-15.78906 31.26803,-34.31731v-104.60577c0,-18.52824 -12.73978,-33.07692 -31.29387,-33.07692zM134.375,99.28246c9.40625,8.73437 11.37019,12.99819 11.68029,13.51502c3.90204,6.48618 -4.31551,6.97717 -4.31551,6.97717l-15.71154,0.23257c0,0 -3.38521,0.67188 -7.82992,-2.40324c-5.89183,-4.00541 -11.42188,-14.49699 -15.76322,-13.15324c-4.36719,1.39543 -4.23798,10.85337 -4.23798,10.85337c0,0 0.02584,1.65385 -0.95613,2.73918c-1.08534,1.13702 -3.20433,1.03365 -3.20433,1.03365h-7.05469c0,0 -15.53065,1.29207 -29.20072,-12.94651c-14.91046,-15.53065 -28.0637,-46.15265 -28.0637,-46.15265c0,0 -0.7494,-1.9381 0.05168,-2.92007c0.93029,-1.08533 3.46274,-1.13702 3.46274,-1.13702l16.82271,-0.07753c0,0 1.57633,0.28426 2.71335,1.11118c0.93029,0.67188 1.47296,1.96394 1.47296,1.96394c0,0 2.71334,6.89964 6.30529,13.10156c7.02885,12.14543 10.3107,14.80709 12.6881,13.51503c3.48858,-1.91226 2.42908,-17.15865 2.42908,-17.15865c0,0 0.07753,-5.55589 -1.75721,-8.03666c-1.39543,-1.88642 -4.03125,-2.45493 -5.21995,-2.60997c-0.95613,-0.12921 0.62019,-2.32572 2.63581,-3.30769c3.02344,-1.47296 8.3726,-1.57633 14.67788,-1.4988c4.90986,0.05169 6.33113,0.36178 8.24339,0.82692c5.8143,1.39544 3.85036,6.79628 3.85036,19.76863c0,4.16046 -0.7494,10.0006 2.2482,11.93871c1.29206,0.82692 4.44471,0.12921 12.30048,-13.25661c3.74699,-6.35697 6.53786,-13.79928 6.53786,-13.79928c0,0 0.62019,-1.34375 1.57632,-1.91226c0.98197,-0.56851 2.29988,-0.38762 2.29988,-0.38762l17.70132,-0.12921c0,0 5.29747,-0.62019 6.17608,1.78305c0.90444,2.50661 -1.98979,8.39844 -9.22537,18.03726c-11.88702,15.8149 -13.20492,14.34195 -3.33353,23.48979z"></path></g></g></svg></div>
+						</a>
+						<a href="https://facebook.com" target="_blank">
+						<div class="icon">
+							<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+							width="30" height="30"
+							viewBox="0 0 172 172"
+							style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M141.04,13.76h-110.08c-9.4944,0 -17.2,7.7056 -17.2,17.2v110.08c0,9.4944 7.7056,17.2 17.2,17.2h110.08c9.4944,0 17.2,-7.7056 17.2,-17.2v-110.08c0,-9.4944 -7.7056,-17.2 -17.2,-17.2zM127.28,65.36h-6.88c-7.3616,0 -10.32,1.72 -10.32,6.88v10.32h17.2l-3.44,17.2h-13.76v51.6h-17.2v-51.6h-13.76v-17.2h13.76v-10.32c0,-13.76 6.88,-24.08 20.64,-24.08c9.976,0 13.76,3.44 13.76,3.44z"></path></g></g></svg></div>
+						</a>
+						<a href="https://instagram.com" target="_blank">
+						<div class="icon">
+							<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+							width="30" height="30"
+							viewBox="0 0 172 172"
+							style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M55.04,10.32c-24.6648,0 -44.72,20.0552 -44.72,44.72v61.92c0,24.6648 20.0552,44.72 44.72,44.72h61.92c24.6648,0 44.72,-20.0552 44.72,-44.72v-61.92c0,-24.6648 -20.0552,-44.72 -44.72,-44.72zM127.28,37.84c3.784,0 6.88,3.096 6.88,6.88c0,3.784 -3.096,6.88 -6.88,6.88c-3.784,0 -6.88,-3.096 -6.88,-6.88c0,-3.784 3.096,-6.88 6.88,-6.88zM86,48.16c20.8808,0 37.84,16.9592 37.84,37.84c0,20.8808 -16.9592,37.84 -37.84,37.84c-20.8808,0 -37.84,-16.9592 -37.84,-37.84c0,-20.8808 16.9592,-37.84 37.84,-37.84zM86,55.04c-17.0624,0 -30.96,13.8976 -30.96,30.96c0,17.0624 13.8976,30.96 30.96,30.96c17.0624,0 30.96,-13.8976 30.96,-30.96c0,-17.0624 -13.8976,-30.96 -30.96,-30.96z"></path></g></g></svg></div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<h3 class="first">We accept</h3>
+					<div class="webmoney icon check">
+						<svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+						width="20" height="20"
+						viewBox="0 0 172 172"
+						style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M83.89703,6.99422c-22.19247,0.48869 -45.34055,10.23696 -61.41609,31.84015c-26.02704,34.99168 -19.16107,83.38039 15.63453,110.15391c14.7748,11.3692 31.61865,16.24594 47.66281,16.24594c17.55432,0 34.09497,-5.88992 45.96297,-15.45312l0.16125,0.18812l5.16672,-4.54187l-17.50906,-19.93453l-7.29656,6.68515c-3.85624,3.51568 -7.57112,6.90574 -11.19344,10.3939c-5.85488,-6.68392 -11.7935,-13.30253 -17.72406,-19.92109c-2.85864,-3.18888 -5.71465,-6.38174 -8.56641,-9.58094c-0.16512,-0.18232 -0.32223,-0.37174 -0.47703,-0.56438l8.35813,-7.8139l-21.52015,-24.30172l8.42531,-7.89453l-21.86953,-24.34875l29.77078,-26.89516l10.99188,11.89219l18.21453,-16.17203c0.1548,0.04816 0.30207,0.09965 0.45687,0.14781l10.42078,11.41516l9.74219,-8.91578c0,0 -2.57753,-2.39273 -5.11969,-3.78937c-0.38872,-0.21328 -0.75115,-0.27219 -1.09515,-0.26875c-10.89534,-5.81661 -23.86608,-8.85962 -37.18156,-8.56641zM133.01781,24.93328l-8.70078,7.96172l7.8475,8.7075l8.73437,-7.85422zM106.53922,27.28484l-13.45765,12.22812l12.10719,13.45094l13.4375,-12.13406zM76.6139,32.23656l-18.14734,16.44078l16.37359,18.21453l18.18766,-16.42062zM145.0175,53.09828l-8.6739,7.90125l7.90797,8.74781l8.74109,-7.92813zM119.55344,55.85969l-13.4375,12.1811l12.10047,13.50469l13.4711,-12.1811zM90.1186,64.54031l-18.15406,16.48109l16.40719,18.21453l18.10031,-16.46094zM157.11125,81.24313l-8.72094,7.8475l7.91469,8.74781l8.7411,-7.86765zM131.64719,85.88578l-13.4375,12.1475l12.11391,13.52485l13.45094,-12.20797zM103.52922,97.28078l-18.14735,16.4139l16.33328,18.26156l18.21453,-16.44078zM144.02985,114.56813l-13.38375,12.20125l12.12734,13.42406l13.47781,-12.1475z"></path></g></g></svg>
+						<a href="https://www.webmoney.ru" target="_blank">WebMoney</a></div>
+					<div class="paypal icon check">
+						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+						width="20" height="20"
+						viewBox="0 0 172 172"
+						style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M30.90625,0l-29.5625,135.94271h39.19271l9.63021,-45.01562h27.99479c26.81901,0 49.32683,-16.46094 55.31771,-44.56771c6.80274,-31.83008 -15.98503,-46.35937 -35.60938,-46.35937zM64.27604,27.77083h19.03646c9.60222,0 16.01302,8.25847 13.21354,18.58854c-2.40755,10.33008 -12.37369,18.58854 -22.39583,18.58854h-18.36458zM150.27604,38.96875c-0.02799,4.08724 -0.30794,8.37044 -1.34375,13.21354c-2.65951,12.51367 -8.14649,23.57162 -15.67708,32.25c-3.16341,9.35026 -12.40169,16.57292 -21.72396,16.57292h-0.44792c-9.04232,4.11524 -19.26042,6.27083 -30.23437,6.27083h-17.46875l-7.39062,34.71354l-2.23958,10.30208h-10.75l-4.25521,19.70833h39.19271l9.63021,-45.01562h27.99479c26.81901,0 49.29883,-16.6849 55.31771,-44.79167c5.03906,-23.6276 -6.4388,-37.54101 -20.60417,-43.22396z"></path></g></g></svg>
+						<a href="https://www.paypal.com" target="_blank">PayPal</a></div>
+					<div class="yandex icon check">
+						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+						width="20" height="20"
+						viewBox="0 0 172 172"
+						style=" fill:#FFFFFF;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g id="original-icon" fill="#FFFFFF"><path d="M144.48,65.36h-30.96v-61.92c0,-1.3244 -0.76024,-2.5284 -1.95048,-3.10288c-1.19024,-0.5676 -2.60408,-0.4128 -3.64296,0.41968c-0.49192,0.39216 -49.278,39.5428 -63.87392,50.59208c-18.00152,13.62584 -19.97264,20.07584 -19.97264,30.59536v65.97576c0,9.48408 7.71592,17.2 17.2,17.2h103.2c1.89888,0 3.44,-1.54112 3.44,-3.44v-92.88c0,-1.89888 -1.54112,-3.44 -3.44,-3.44zM78.89984,66.29224c3.70488,-4.13488 9.11944,-5.59344 12.08816,-3.26112c2.97216,2.33576 2.37704,7.58176 -1.32784,11.71664c-3.70488,4.13488 -9.116,5.59344 -12.08816,3.25768c-2.97216,-2.33576 -2.37704,-7.57832 1.32784,-11.7132zM48.16,147.92l63.75696,-40.26864c0.9976,-0.62952 1.60304,-1.72688 1.60304,-2.9068v-32.50456h17.2v49.02c0,1.52736 -1.00792,2.87584 -2.4768,3.3024z"></path></g></g></svg>
+						<a href="https://checkout.yandex.com" target="_blank">YandexMoney</a></div>
+					<div class="credit icon check">
+						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+						width="22" height="22"
+						viewBox="0 0 172 172"
+						style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M28.66667,28.66667c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v14.33333v21.5v50.16667c0,7.91917 6.41417,14.33333 14.33333,14.33333h114.66667c7.91917,0 14.33333,-6.41417 14.33333,-14.33333v-50.16667v-21.5v-14.33333c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333zM28.66667,43h114.66667v14.33333h-114.66667zM28.66667,78.83333h114.66667v50.16667h-114.66667z"></path></g></g></svg>
+						<a href="https://www.visa.com" target="_blank">Visa</a>
+						<a>/</a>
+						<a href="https://www.mastercard.com" target="_blank">MasterCard</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>	
