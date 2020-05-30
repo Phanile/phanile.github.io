@@ -3,8 +3,112 @@
 	<title>Art</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="styles/main_style.css">
-	<script type="text/javascript" src='scripts/main_script.js'></script>
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link rel="stylesheet" type="text/css" href="styles/general.css">
+	<script type="text/javascript" >
+		document.addEventListener('DOMContentLoaded', function(){
+			headerAnimation();
+		});
+
+		function headerAnimation () {
+			if (window.innerWidth > 991){
+				expandAnim();
+			}
+			else{
+				expandAnimMobile();
+				choiseLink = document.getElementsByClassName('a-full')[0];
+				choiseLink.setAttribute('id', 'a-full')
+			}
+		}
+
+		//menu
+
+		function expandAnim () {
+			var header = document.getElementsByClassName('header')[0];
+				headerBack = document.getElementById('header-back');
+				svg = document.getElementsByClassName('header-icon');
+				isOpen = false;
+
+			function scrollUpdate () {
+				var coord = pageYOffset;
+
+				if (coord > 700 && isOpen == false){
+					headerBack.style.height = '60px';
+				} 
+				else{
+					headerBack.style.height = '0px';
+				}
+			}
+
+			scrollUpdate()
+
+			
+			header.onmouseenter = function(){
+				isOpen = true;
+				this.style.maxHeight = '9000px';
+				for (var i = 0; i < svg.length; i++){
+					svg[i].setAttribute('fill', '#1C1C1C');
+				}
+			}
+			header.onmouseleave = function(){
+				isOpen = false;
+				this.style.maxHeight = '60px';
+				for (var i = 0; i < svg.length; i++){
+					svg[i].setAttribute('fill', '#FFFFFF');
+				}
+				scrollUpdate()
+			}
+
+			window.addEventListener('scroll', function() {
+				scrollUpdate()
+			});
+		}
+
+		//menu mobile
+
+		function expandAnimMobile () {
+			var button = document.getElementById('menu');
+				header = document.getElementsByClassName('header')[0];
+				headerOverlay = document.getElementsByClassName('header-overlay')[0];
+				svg = document.getElementsByClassName('header-icon');
+				svgMain = document.getElementsByClassName('a-icon');
+			button.addEventListener('click', function(){
+				if (header.id != 'mobile'){              //with open
+					header.setAttribute('id', 'mobile');
+					headerOverlay.setAttribute('id', 'header-overlay');
+					for (var i = 0; i < svg.length; i++){
+						svg[i].setAttribute('fill', '#1C1C1C');
+						svgMain[i].style.display = 'block';
+					}
+					onClickClose(header);
+				}
+				else{              //with close
+					header.removeAttribute('id', 'mobile');
+					headerOverlay.removeAttribute('id', 'header-overlay');
+					for (var i = 0; i < svg.length; i++){
+						svgMain[i].style.display  = 'none';
+					}
+				}
+			})
+		}
+
+		//Close menu
+
+		function onClickClose(elem) { // вызвать в момент показа окна, где elem - окно
+		    function outsideClickListener(event) {
+		        if (!elem.contains(event.target)) {  // проверяем, что клик не по элементу
+		            elem.removeAttribute('id', 'mobile'); //скрыть
+		            headerOverlay.removeAttribute('id', 'header-overlay'); //скрыть
+					for (var i = 0; i < svg.length; i++){
+						svgMain[i].style.display  = 'none';
+					}
+		            document.removeEventListener('click', outsideClickListener);
+		        }
+		    }
+		    document.addEventListener('click', outsideClickListener);
+		}
+	</script>
+	<script type="text/javascript" src='scripts/main.js'></script>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -16,9 +120,9 @@
 	<div class="container-fluid header">
 		<div id="header-back"></div>
 		<button id="menu">
-				<div class="menu-block"></div>
-				<div class="menu-block"></div>
-				<div class="menu-block"></div>
+			<div class="menu-block"></div>
+			<div class="menu-block"></div>
+			<div class="menu-block"></div>
 		</button>
 		<div class="container" id="header">
 			<h3>Categories</h3>
@@ -31,7 +135,7 @@
 				width="24" height="24"
 				viewBox="0 0 172 172"
 				style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#FFFFFF" class="header-icon"><path d="M124.02813,18.40938c-10.88438,0 -21.23125,4.3 -29.025,11.95938l-9.00312,9.00313l-9.00312,-9.00313c-7.79375,-7.79375 -18.00625,-11.95938 -29.025,-11.95938c-11.01875,0 -21.23125,4.3 -29.025,11.95938c-7.65937,7.79375 -11.95937,18.00625 -11.95937,29.025c0,11.01875 4.3,21.23125 11.95937,28.89062l9.675,9.675c1.6125,1.6125 4.16563,1.6125 5.64375,0c1.6125,-1.6125 1.6125,-4.16562 0,-5.64375l-9.675,-9.675c-6.18125,-6.18125 -9.675,-14.5125 -9.675,-23.24687c0,-8.73437 3.35938,-17.06562 9.675,-23.24688c6.18125,-6.18125 14.5125,-9.675 23.24688,-9.675c8.73438,0 17.06563,3.35938 23.24688,9.675l11.825,11.825c1.6125,1.6125 4.16563,1.6125 5.64375,0l11.825,-11.825c12.9,-12.9 33.72813,-12.9 46.49375,0c6.18125,6.18125 9.675,14.5125 9.675,23.24688c0,8.73437 -3.35937,17.06563 -9.675,23.24687l-54.15313,54.55625c-1.74688,1.74687 -4.16562,2.6875 -6.71875,2.6875c-2.55313,0 -4.8375,-0.94063 -6.58437,-2.6875l-17.87188,-17.7375c-1.6125,-1.6125 -4.16562,-1.6125 -5.64375,0c-1.6125,1.6125 -1.6125,4.16562 0,5.64375l17.87188,17.87187c3.35938,3.35938 7.65937,5.10625 12.3625,5.10625c4.70313,0 9.00313,-1.88125 12.3625,-5.10625l54.69063,-54.69062c7.79375,-7.79375 11.95937,-18.00625 11.95937,-29.025c0,-11.01875 -4.3,-21.23125 -11.95937,-29.025c-7.92812,-7.65938 -18.275,-11.825 -29.15937,-11.825z"></path></g></g></svg></a>
-			<a href="#" class="a-icon"><svg class="svg cart" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+			<a href="#" class="right a-icon"><svg class="svg cart" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 				width="24" height="24"
 				viewBox="0 0 172 172"
 				style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#FFFFFF" class="header-icon"><path d="M12.09375,14.78125c-2.28438,0 -4.03125,1.74687 -4.03125,4.03125c0,2.28438 1.74687,4.03125 4.03125,4.03125h9.40625v99.4375c0,7.39063 6.04688,13.4375 13.4375,13.4375h67.1875c2.28437,0 4.03125,-1.74687 4.03125,-4.03125c0,-2.28438 -1.74688,-4.03125 -4.03125,-4.03125h-67.1875c-2.95625,0 -5.375,-2.41875 -5.375,-5.375v-86h117.31042c1.74687,0 3.35833,0.8052 4.29895,2.28333c1.075,1.47812 1.34375,3.2271 0.67188,4.8396l-18.40833,55.36145c-2.01562,6.04688 -7.52552,10.07813 -13.97552,10.07813h-75.11615c-2.28437,0 -4.03125,1.74688 -4.03125,4.03125c0,2.28437 1.74688,4.03125 4.03125,4.03125h75.11615c9.80937,0 18.54322,-6.3151 21.63385,-15.58697l18.40833,-55.36407c1.34375,-4.16562 0.67397,-8.6 -1.87915,-12.09375c-2.55312,-3.49375 -6.58647,-5.6427 -10.88647,-5.6427h-117.17395v-9.40625c0,-2.28438 -1.74687,-4.03125 -4.03125,-4.03125zM34.9375,143.78125c-7.39062,0 -13.4375,6.04688 -13.4375,13.4375c0,7.39063 6.04688,13.4375 13.4375,13.4375c7.39063,0 13.4375,-6.04687 13.4375,-13.4375c0,-7.39062 -6.04687,-13.4375 -13.4375,-13.4375zM102.125,143.78125c-7.39062,0 -13.4375,6.04688 -13.4375,13.4375c0,7.39063 6.04688,13.4375 13.4375,13.4375c7.39063,0 13.4375,-6.04687 13.4375,-13.4375c0,-7.39062 -6.04687,-13.4375 -13.4375,-13.4375zM34.9375,151.84375c2.95625,0 5.375,2.41875 5.375,5.375c0,2.95625 -2.41875,5.375 -5.375,5.375c-2.95625,0 -5.375,-2.41875 -5.375,-5.375c0,-2.95625 2.41875,-5.375 5.375,-5.375zM102.125,151.84375c2.95625,0 5.375,2.41875 5.375,5.375c0,2.95625 -2.41875,5.375 -5.375,5.375c-2.95625,0 -5.375,-2.41875 -5.375,-5.375c0,-2.95625 2.41875,-5.375 5.375,-5.375z"></path></g></g></svg></a>
@@ -80,10 +184,10 @@
 	<div class='container' id='categories'>
 		<h2>CATEGORIES</h2>
 		<div class="row">
-			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/landscape-full.jpg);"><p class="categories-name">landscape</p></div></a></div>
-			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/abstract-full.jpg);"><p class="categories-name">abstract</p></div></a></div>
+			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/landscape.jpg);"><p class="categories-name">landscape</p></div></a></div>
+			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/abstract.jpg);"><p class="categories-name">abstract</p></div></a></div>
 			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/black-and-white.jpg);"><p class="categories-name">blackwhite</p></div></a></div>
-			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/portrait-full.jpg);"><p class="categories-name">portrait</p></div></a></div>
+			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/portrait.jpg);"><p class="categories-name">portrait</p></div></a></div>
 		</div>
 	</div>
 
