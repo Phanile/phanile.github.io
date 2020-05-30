@@ -8,6 +8,10 @@ p{
 	margin-bottom: 0;
 }
 
+*:focus{
+	outline: none;
+}
+
 /*----------------------------------Header-----------------------------------------*/
 
 .header{
@@ -48,13 +52,13 @@ p{
 		cursor: pointer;
 	}
 
-	#header .phone{
-		margin-left: auto;
-	}
-
-	#header svg{
+	#header .a-icon{
 		z-index: 12;
 		margin-left: 25px;
+	}
+
+	#header .phone{
+		margin-left: auto;
 	}
 
 	.header .header-icon{
@@ -186,7 +190,7 @@ p{
 
 /*----------------------------------Header mobile-----------------------------------------*/
 
-@media only screen and (max-width: 992px){
+@media only screen and (max-width: 991px){
 
 	#menu{
 	  position: absolute;
@@ -194,8 +198,19 @@ p{
 
 	}
 
-	.header svg{
+	#header .phone{
+		opacity: 0;
+		margin-left: 18%;
+	}
+
+	#header .a-icon{
 		display: none;
+		margin-left: 50px;
+		transform: scale(1.3);
+	}
+
+	#header .cart{
+		margin-right: auto;
 	}
 
 	.header h3{
@@ -207,7 +222,9 @@ p{
 		transition: 0s;
 	}
 
-
+	.header:hover{
+		box-shadow: none;
+	}
 
 	#header{
 		height: 110px;
@@ -255,17 +272,14 @@ p{
 
 	.header:hover{
 		transition: 0s;
+		background-color: transparent;
 	}
 
 	.header:focus{
 		background-color: transparent;
 	}
 
-	#header-back{
-		display: none;
-	}
-
-	.contact{
+	.contact, #header-back{
 		display: none;
 	}
 
@@ -274,13 +288,13 @@ p{
 	}
 
 	.head-text{
-		font-size: 14px;
-		padding-bottom: 7px;
-		padding-top: 7px;
+		font-size: 20px;
+		padding-bottom: 12px;
+		padding-top: 12px;
 		transition: 0s;
 	}
 
-	.mobile{
+	#mobile{
 		max-height: 9000px;
 		transition: all 1.25s ease .02s, background-color .005s;
 		color: #1C1C1C;
@@ -288,15 +302,24 @@ p{
 		box-shadow: 0 0 12px 0 rgba(0,0,0,0.08);
 	}
 
-	.mobile #header-line{
+	#mobile #header-line{
 		width: 100%;
 		opacity: 100%;
 		transition: all .4s .1s, opacity 0s .001s;
 	}
 
-	.mobile .categories, .mobile .artists{
+	#mobile .categories, .mobile .artists{
 		transition: opacity .5s .15s;
 		opacity: .8;
+	}
+
+	#header-overlay{
+		z-index: 4;
+		position: fixed;
+		transition: .5s;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, .6);
 	}
 
 }
@@ -344,6 +367,10 @@ p{
 	margin-top: 80px;
 }
 
+	#categories a{
+		text-decoration: none;
+	}
+
 	#categories h2{
 		color: #333;
 		font-family: Bebas Neue Bold;
@@ -373,7 +400,7 @@ p{
 		display: flex;
 		transition: .1s;
 		color: #F2F2F2;
-		font-size: 40px;
+		cursor: pointer;
 	}
 
 		#categories p{
@@ -386,6 +413,8 @@ p{
 			align-self: flex-end;
 			margin-bottom: 0;
 			border-radius: 0px 0px 7px 7px;
+			font-size: 40px;
+			word-break: break-word;
 		}
 
 		@media only screen and (max-width: 1200px){
@@ -408,6 +437,7 @@ p{
 	box-shadow: 0 2px 8px 0 rgba(0,0,0,0.5);
 	display: flex;
 	align-items: center;
+	word-break: break-word;
 }
 
 	#artist .content{
@@ -463,6 +493,23 @@ p{
 				transition: .3s;
 			}
 
+		@media only screen and (max-width: 768px){
+			#artist .morebtn{
+				right: calc(50% - 91px);
+			}
+
+			#artist h1{
+				font-size: 52px;
+				line-height: 64px;
+				text-align: center;
+			}
+
+			#artist p{
+				font-size: 22px;
+				line-height: 22px;
+			}
+		}
+
 /*----------------------------------Our choise-----------------------------------------*/
 
 #choise{
@@ -489,6 +536,7 @@ p{
 		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.6);
 		text-align: right;
 		transition: .5s;
+		position: relative;
 	}
 
 		#choise .overlay{
@@ -554,6 +602,14 @@ p{
 					color: #F79753;
 					transition: .15s;
 				}
+	#a-full{
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		margin-left: -15px;
+		z-index: 4;
+	}
 
 /*----------------------------------Footer-----------------------------------------*/
 
@@ -664,7 +720,7 @@ p{
 	src: url(../data/Bebas_Neue_Bold.ttf); /* Путь к файлу со шрифтом */
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
 
 	#middle{
 		height: 520px;
@@ -692,11 +748,7 @@ p{
 		/*background: linear-gradient(238deg, rgba(0,0,0,0.75) 0%, rgba(0,212,255,0) 100%);*/
 	}
 
-	#choise .buybtn{
-		display: none;
-	}
-
-	#footer{
+	#footer .non-mobile, #choise .button{
 		display: none;
 	}
 
@@ -753,12 +805,15 @@ p{
 #categories .category-card:hover{
 	transform: scale(1.05);
 	color: #F79753;
-	box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.7);
+	box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.6);
+}
+
+#categories .category-card:hover p{
 	font-size: 42px;
 }
 
 	#categories .category-card:active{
 	transform: scale(1.03);
 	color: #F79753;
-	box-shadow: 2px 2px 12px 0 rgba(0,0,0,0.6);
+	box-shadow: 2px 2px 12px 0 rgba(0,0,0,0.4);
 }
