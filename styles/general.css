@@ -18,6 +18,7 @@ h1{
 	font-size: 50px;
 	letter-spacing: 3.36px;
 	line-height: 50px;
+	margin-bottom: 0px;
 }
 
 /*----------------------------------Header-----------------------------------------*/
@@ -63,14 +64,16 @@ h1{
 	#header .a-icon{
 		z-index: 12;
 		margin-left: 25px;
+		text-decoration: none;
 	}
 
-	#header .phone{
+	#header .left{
 		margin-left: auto;
 	}
 
 	.header .header-icon{
 		transition: 0s .4s;
+		opacity: .9;
 	}
 
 	.header:hover .header-icon{
@@ -140,7 +143,8 @@ h1{
 		padding-left: 10px;
 		margin-left: -10px;
 		padding-right: 10px;
-		word-break: break-word;	}
+		word-break: break-word;
+	}
 
 	.contact{
 		transition: opacity .5s;
@@ -207,12 +211,11 @@ h1{
 
 /*----------------------------------Header mobile-----------------------------------------*/
 
-@media only screen and (max-width: 991px){
+@media only screen and (max-width: 768px){
 
 	#menu{
 	  position: absolute;
 	  z-index: 10;
-
 	}
 
 	#header .phone{
@@ -236,6 +239,7 @@ h1{
 	.header{
 		max-height: 110px;
 		transition: 0s;
+		z-index: 4;
 	}
 
 	.not-main{
@@ -244,7 +248,9 @@ h1{
 	}
 
 	.header:hover{
+		max-height: 110px;
 		box-shadow: none;
+		transition: 0s;
 	}
 
 	#header{
@@ -315,7 +321,7 @@ h1{
 	}
 
 	.head-text{
-		font-size: 20px;
+		font-size: 16px;
 		padding-bottom: 12px;
 		padding-top: 12px;
 		transition: 0s;
@@ -341,7 +347,7 @@ h1{
 	}
 
 	#header-overlay{
-		z-index: 4;
+		z-index: 2;
 		position: fixed;
 		transition: .5s;
 		width: 100vw;
@@ -349,7 +355,17 @@ h1{
 		background-color: rgba(0, 0, 0, .6);
 	}
 
+	.h{
+		color: black;
+		font-weight: bold;
+		opacity: 1;
+		margin-bottom: 0px;
+		font-size: 18px;
+		word-break: normal;
+	}
+
 }
+
 
 @media only screen and (min-width: 768px) and (max-width: 992px){
 	#header .right{
@@ -388,7 +404,7 @@ h1{
 
 				#footer h3{
 					color: #F79753;
-					font-family: Corbel;
+					font-family: 'Nunito', sans-serif;
 					font-size: 24px;
 					font-weight: 700;
 					letter-spacing: 3.42px;
@@ -398,10 +414,11 @@ h1{
 				#footer a{
 					text-decoration: none;
 					color: #FFF;
+					opacity: .95;
 					padding-top: 2px;
 					font-family: Century Gothic;
 					font-size: 16px;
-					letter-spacing: 2.56px;
+					letter-spacing: 1.5px;
 					word-break: break-word;
 				}
 
@@ -452,7 +469,7 @@ h1{
 
 				#footer .col-md-4 #name{
 					color: #FFF;
-					font-family: Corbel;
+					font-family: 'Nunito', sans-serif;
 					font-size: 28px;
 					font-weight: 700;
 					letter-spacing: 1.88px;
