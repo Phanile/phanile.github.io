@@ -1,0 +1,59 @@
+/* cart cards */
+
+.cart-card{
+	display: flex;
+	justify-content: center;
+	height: 230px;
+	background-color: #FFFFFF;
+	box-shadow: 2px 2px 8px 0 rgba(0,0,0,0.1);
+	border-radius: 7px;
+}
+
+#cart-cards{
+	margin-top: 30px;
+}
+
+.cart-img{
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	border-radius: 7px 0px 0px 7px;
+
+}
+
+.cart-text{
+	display: flex;
+	align-items: center;
+	font-size: 72px;
+}
+
+.cart-price{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	font-size: 72px;
+}
+
+.cart-del{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.del{
+	color: black;
+}
+
+.cart-card h1{
+	margin-left: 20px;
+}
+
+.cart-card h2{
+	color: #F79753;
+	font-family: "Bebas Neue Regular";
+	font-size: 48px;
+	letter-spacing: 2.29px;
+	line-height: 48px;
+	text-align: right;
+}
