@@ -292,3 +292,29 @@ a:hover{
 	color: #F79753;
 	box-shadow: 2px 2px 12px 0 rgba(0,0,0,0.4);
 }
+
+@media only screen and (max-width: 768px){
+	/* Deleting animations on mobile */
+
+	.button:hover{
+	transform: scale(1);
+	box-shadow: 2px 2px 8px 0 rgba(0,0,0,0.4);
+	transition: all 0s;
+	}
+	.button:active{
+	transform: scale(1);
+	box-shadow: 2px 2px 8px 0 rgba(0,0,0,0.4);
+	transition: all 0s;
+	}
+
+	.more-card:hover{
+	transform: scale(1);
+	color: #FFFFFF;
+	box-shadow: 2px 2px 12px 0 rgba(0,0,0,0.4);
+	}
+	.more-card:active{
+	transform: scale(1);
+	color: #FFFFFF;
+	box-shadow: 2px 2px 12px 0 rgba(0,0,0,0.4);
+	}
+}
