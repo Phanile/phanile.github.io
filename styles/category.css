@@ -2,6 +2,7 @@
 	margin-top: 108px;
 	display: flex;
 	flex-direction: column;
+	min-height: calc(100vh - 424px);
 }
 
 #title{
@@ -38,7 +39,7 @@
 	cursor: pointer;
 }
 
-.cat-card{
+.img-card{
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -110,19 +111,14 @@ a:hover{
 }
 
 @media only screen and (max-width: 991px){
-	.cat-card{
+	.img-card{
 		height: 180px;
 	}
-
-	#title{
-		z-index: 6;
-	}
-
 }
 
 @media only screen and (max-width: 767px){
 
-	.cat-card{
+	.img-card{
 		height: 220px;
 	}
 
@@ -171,7 +167,6 @@ a:hover{
 	#title-h1{
 		width: 60%;
 		text-align: center;
-		word-break: break-all;
 	}
 
 	.cat-svg{
@@ -180,16 +175,8 @@ a:hover{
 }
 
 @media only screen and (max-width: 575px){
-
-	.col-left{
-		padding-right: 15px;
-	}
-
-	.col-right{
-		padding-left: 15px;
-	}
-
-	.cat-card{
+	
+	.img-card{
 		height: 160px;
 	}
 
@@ -223,19 +210,19 @@ a:hover{
 
 /*---------------------------------------------Animation cards---------------------------------------------*/
 
-.cat-card:hover{
+.img-card:hover{
 	transition: .2s;
 	transform: scale(1.025);
 	box-shadow: 2px 2px 16px 0 rgba(0,0,0,0.85);
 	background-position: center bottom;
 }
 
-.cat-card:hover .cat-content{
+.img-card:hover .cat-content{
 	transition: .15s .125s;
 	opacity: 1;
 }
 
-.cat-card:hover .cat-overlay{
+.img-card:hover .cat-overlay{
 	transition: top .2s, opacity .3s;
 	top: 0%;
 	opacity: 1;

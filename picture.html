@@ -1,141 +1,16 @@
 <!DOCTYPE html>
 <head>
-	<title>Art</title>
+	<title>Landscape</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="styles/main.css">
-	<link rel="stylesheet" type="text/css" href="styles/general.css">
-	<script type="text/javascript" >
-		document.addEventListener('DOMContentLoaded', function(){
-			headerAnimation();
-		});
-
-		function headerAnimation () {
-			if (window.innerWidth > 767){//-------- device width
-				expandAnim();
-			}
-			else{
-				expandAnimMobile();
-				choiseLink = document.getElementsByClassName('a-full')[0];
-				choiseLink.setAttribute('id', 'a-full')
-			}
-		}
-
-		//menu
-
-		function expandAnim () {
-			var header = document.getElementsByClassName('header')[0];
-				headerBack = document.getElementById('header-back');
-				svg = document.getElementsByClassName('header-icon');
-				isOpen = false;
-
-			function scrollUpdate () {
-				var coord = pageYOffset;
-
-				if (coord > 700 && isOpen == false){//-------- height for header
-					headerBack.style.height = '60px';
-				} 
-				else{
-					headerBack.style.height = '0px';
-				}
-			}
-
-			scrollUpdate()
-
-			
-			header.onmouseenter = function(){
-				isOpen = true;
-				this.style.maxHeight = '9000px';
-				user.setAttribute('src', 'data/user-dark.svg');
-				phone.setAttribute('src', 'data/phone-dark.svg');
-				heart.setAttribute('src', 'data/heart-dark.svg');
-				cart.setAttribute('src', 'data/cart-dark.svg');
-			}
-			header.onmouseleave = function(){
-				isOpen = false;
-				this.style.maxHeight = '60px';
-				setTimeout(function(){
-					user.setAttribute('src', 'data/user.svg');
-					phone.setAttribute('src', 'data/phone.svg');
-					heart.setAttribute('src', 'data/heart.svg');
-					cart.setAttribute('src', 'data/cart.svg');
-				}, 300);
-				scrollUpdate()
-			}
-
-			window.addEventListener('scroll', function() {
-				scrollUpdate()
-			});
-		}
-
-		//menu mobile
-
-		function expandAnimMobile () {
-			var button = document.getElementById('menu');
-				header = document.getElementsByClassName('header')[0];
-				headerOverlay = document.getElementsByClassName('header-overlay')[0];
-				svgMain = document.getElementsByClassName('a-icon');
-				categoriesBlock = document.getElementsByClassName('categories')[0];
-				artistsBlock = document.getElementsByClassName('artists')[0];
-				artistsText = document.createElement('p');
-				categoriesText = document.createElement('p');
-				
-			document.getElementById('user').setAttribute('src', 'data/user-dark.svg');
-			document.getElementById('heart').setAttribute('src', 'data/heart-dark.svg');
-			document.getElementById('cart').setAttribute('src', 'data/cart-dark.svg');
-
-			categoriesText.className = 'head-text h';
-			artistsText.className = 'head-text h';
-			categoriesText.innerHTML = 'Categories';
-			artistsText.innerHTML = 'Artists';
-
-			button.addEventListener('click', function(){
-				if (header.id != 'mobile'){              //with open
-					header.style.transition = '0s';
-					header.style.zIndex = '10';
-					header.setAttribute('id', 'mobile');
-					headerOverlay.setAttribute('id', 'header-overlay');
-					artistsBlock.prepend(artistsText);
-					categoriesBlock.prepend(categoriesText);
-					onClickClose(header);
-					for (var i of svgMain){
-						i.style.display  = 'block';
-					}
-				}
-				else{              //with close
-					header.removeAttribute('id', 'mobile');
-					headerOverlay.removeAttribute('id', 'header-overlay');
-					header.style.zIndex = '4';
-					for (var i of svgMain){
-						i.style.display  = 'none';
-					}
-				}
-			})
-		}
-
-		//Close menu
-
-		function onClickClose(elem) { // вызвать в момент показа окна, где elem - окно
-		    function outsideClickListener(event) {
-		        if (!elem.contains(event.target)) {  // проверяем, что клик не по элементу
-		            elem.removeAttribute('id', 'mobile'); //скрыть
-		            headerOverlay.removeAttribute('id', 'header-overlay'); //скрыть
-					for (var i = 0; i < svg.length; i++){
-						svgMain[i].style.display  = 'none';
-					}
-		            document.removeEventListener('click', outsideClickListener);
-		        }
-		    }
-		    document.addEventListener('click', outsideClickListener);
-		}
-	</script>
-	<script type="text/javascript" src='scripts/main.js'></script>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@200;300;400&display=swap" rel="stylesheet">
+	<script type="text/javascript" src='scripts/general.js'></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="styles/general.css">
+	<link rel="stylesheet" type="text/css" href="styles/picture.css">
 </head>
 
 <body>
-
 <!----------------------------------------Header---------------------------------------->
 
 	<div class="container-fluid header not-main">
@@ -181,55 +56,41 @@
 	</div>
 	<div class="header-overlay"></div>
 
-<!----------------------------------------Middle---------------------------------------->
+<!----------------------------------------Main---------------------------------------->
 
-	<div class="container-fluid" id="middle">
-		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-10">
-				<h1 class="text-center">ART FOR ALL</h1><h3 class="text-center">Explore yourself with our paintings</h3>
+<div id="middle">
+	<div class="container" id="picture" style="background-image: url(data/esmerald.jpg)"></div>
+	<div class="container" id="title">
+		<div id="picture-name"><h1>Esmerald<br /><span>$1299</span></h1></div>
+		<div class="button" id="btn-card"><a href="#">Add to card</a></div>
+		<div class="button" id="btn-buy">Buy</div>
+	</div>
+	<div class="container" id="subtitle">
+		<div class="subtitle-block" id="describtion">
+			<h1>Describtion</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis enim suscipit, ultricies ligula at, finibus risus. Integer aliquam sem et ultrices imperdiet. Sed nec nibh feugiat, luctus turpis vel, fringilla ante. Aenean tincidunt sem.</p>
+		</div>
+		<div class="subtitle-block" id="parameters">
+			<h1>Parameters</h1>
+			<ul>
+				<li><span>Width: </span>320cm</li>
+				<li><span>Height: </span>240cm</li>
+				<li><span>Canvas: </span>lorem ipsum dolor sit amet.</li>
+				<li><span>Frame: </span>consectetur adipiscing elit. Donec quis enim suscipit.</li>
+			</ul>
+		</div>
+	</div>
+	<div id="more-back">
+		<div class="container" id="more">
+			<h1>See more</h1>
+			<div class="row">
+				<div class="col-md-3"><a href="#"><div class="more-card" style="background-image: url(data/card-3.jpg);"><p class="more-name">Volcano</p></div></a></div>
+				<div class="col-md-3"><a href="#"><div class="more-card" style="background-image: url(data/card-1.jpg);"><p class="more-name">Russian winter</p></div></a></div>
+				<div class="col-md-3"><a href="#"><div class="more-card" style="background-image: url(data/card-4.jpg);"><p class="more-name">Rocky mounain</p></div></a></div>
+				<div class="col-md-3"><a href="#"><div class="more-card" style="background-image: url(data/card-6.jpg);"><p class="more-name">Lonely house</p></div></a></div>
 			</div>
-			<div class="col-md-1"></div>
 		</div>
 	</div>
-
-<!----------------------------------------Categories---------------------------------------->
-
-	<div class='container' id='categories'>
-		<h2>CATEGORIES</h2>
-		<div class="row">
-			<div class="col-md-3"><a href="category.html"><div class="category-card" style="background-image: url(data/landscape.jpg);"><p class="categories-name">landscape</p></div></a></div>
-			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/abstract.jpg);"><p class="categories-name">abstract</p></div></a></div>
-			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/black-and-white.jpg);"><p class="categories-name">blackwhite</p></div></a></div>
-			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/portrait.jpg);"><p class="categories-name">portrait</p></div></a></div>
-		</div>
-	</div>
-
-<!----------------------------------------Artist---------------------------------------->
-
-	<div class="container-fluid" id="artist">
-		<div class="container content">
-			<h1>SARINE <span>CARLILE</span></h1>
-			<p>Our first and head artist</p>
-			<div class="morebtn button"><a href="#">More</a></div>
-		</div>
-	</div>
-
-<!----------------------------------------Our choise---------------------------------------->
-
-	<div class='container' id='choise'>
-		<h2>OUR CHOISE</h2>
-			<div class="container picture">
-				<a href="#" class="a-full"></a>
-				<div class="overlay">
-					<div class="container content">
-					<h3>Esmerald</h3>
-					<p>$1299</p>
-					<div class="buybtn button"><a href="#">Buy</a></div>
-					</div>
-				</div>
-			</div>
-	</div>
+</div>
 
 <!----------------------------------------Footer---------------------------------------->
 	<div class='container-fluid' id="footer">
@@ -305,4 +166,4 @@
 		</div>
 	</div>
 
-</body>	
+</body>

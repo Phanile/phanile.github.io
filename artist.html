@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <head>
-	<title>Art</title>
+	<title>Sarine Carlile</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="styles/main.css">
-	<link rel="stylesheet" type="text/css" href="styles/general.css">
 	<script type="text/javascript" >
 		document.addEventListener('DOMContentLoaded', function(){
 			headerAnimation();
@@ -16,8 +14,6 @@
 			}
 			else{
 				expandAnimMobile();
-				choiseLink = document.getElementsByClassName('a-full')[0];
-				choiseLink.setAttribute('id', 'a-full')
 			}
 		}
 
@@ -27,12 +23,13 @@
 			var header = document.getElementsByClassName('header')[0];
 				headerBack = document.getElementById('header-back');
 				svg = document.getElementsByClassName('header-icon');
+				artistName = document.getElementById('artist-name')
 				isOpen = false;
 
 			function scrollUpdate () {
 				var coord = pageYOffset;
 
-				if (coord > 700 && isOpen == false){//-------- height for header
+				if (coord > (artistName.getBoundingClientRect().top + pageYOffset) && isOpen == false){//-------- height for header
 					headerBack.style.height = '60px';
 				} 
 				else{
@@ -45,7 +42,7 @@
 			
 			header.onmouseenter = function(){
 				isOpen = true;
-				this.style.maxHeight = '9000px';
+				header.style.maxHeight = '9000px';
 				user.setAttribute('src', 'data/user-dark.svg');
 				phone.setAttribute('src', 'data/phone-dark.svg');
 				heart.setAttribute('src', 'data/heart-dark.svg');
@@ -53,7 +50,7 @@
 			}
 			header.onmouseleave = function(){
 				isOpen = false;
-				this.style.maxHeight = '60px';
+				header.style.maxHeight = '60px';
 				setTimeout(function(){
 					user.setAttribute('src', 'data/user.svg');
 					phone.setAttribute('src', 'data/phone.svg');
@@ -129,16 +126,19 @@
 		    document.addEventListener('click', outsideClickListener);
 		}
 	</script>
-	<script type="text/javascript" src='scripts/main.js'></script>
+	<script type="text/javascript" src="scripts/artist.js"></script>
+	<script type="text/javascript" src="scripts/category.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@200;300;400&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="styles/general.css">
+	<link rel="stylesheet" type="text/css" href="styles/category.css">
+	<link rel="stylesheet" type="text/css" href="styles/artist.css">
 </head>
 
 <body>
-
 <!----------------------------------------Header---------------------------------------->
 
-	<div class="container-fluid header not-main">
+	<div class="container-fluid header">
 		<div id="header-back"></div>
 		<button id="menu">
 			<div class="menu-block"></div>
@@ -183,52 +183,121 @@
 
 <!----------------------------------------Middle---------------------------------------->
 
-	<div class="container-fluid" id="middle">
-		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-10">
-				<h1 class="text-center">ART FOR ALL</h1><h3 class="text-center">Explore yourself with our paintings</h3>
+		<div class="container-fluid" id="artist-back">
+			<div class="container" id="content">
+				<h1 id="artist-name">Sarine <span>Carlile</span></h1>
+				<p id="artist-text-desktop">Cras non odio sed mauris elementum varius. Donec lectus mi, congue et ipsum ut, finibus tincidunt leo. Vivamus purus velit, molestie id semper ut, malesuada ut tortor.</p>
+				<p id="artist-text-mobile">Cras non odio sed mauris elementum varius<span> ...</span></p>
 			</div>
-			<div class="col-md-1"></div>
 		</div>
-	</div>
 
-<!----------------------------------------Categories---------------------------------------->
+<!----------------------------------------Catalog---------------------------------------->
 
-	<div class='container' id='categories'>
-		<h2>CATEGORIES</h2>
-		<div class="row">
-			<div class="col-md-3"><a href="category.html"><div class="category-card" style="background-image: url(data/landscape.jpg);"><p class="categories-name">landscape</p></div></a></div>
-			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/abstract.jpg);"><p class="categories-name">abstract</p></div></a></div>
-			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/black-and-white.jpg);"><p class="categories-name">blackwhite</p></div></a></div>
-			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/portrait.jpg);"><p class="categories-name">portrait</p></div></a></div>
+	<div class="container" id="middle">
+		<div id="title">
+			<div id="title-h1"><h1>Popular works</h1></div>
+			<div id="sort-block">
+				<p id="sort">sort by:</p>
+				<div id="sort-by-price" class="sort"><p>price<img id="sort-by-price-icon" class="sort-img" src="data/sort-none.svg" /></p></div>
+				<div id="sort-by-update" class="sort"><p>update<img id="sort-by-update-icon" class="sort-img" src="data/sort-none.svg" /></p></div>
+			</div>
 		</div>
-	</div>
-
-<!----------------------------------------Artist---------------------------------------->
-
-	<div class="container-fluid" id="artist">
-		<div class="container content">
-			<h1>SARINE <span>CARLILE</span></h1>
-			<p>Our first and head artist</p>
-			<div class="morebtn button"><a href="#">More</a></div>
-		</div>
-	</div>
-
-<!----------------------------------------Our choise---------------------------------------->
-
-	<div class='container' id='choise'>
-		<h2>OUR CHOISE</h2>
-			<div class="container picture">
-				<a href="#" class="a-full"></a>
-				<div class="overlay">
-					<div class="container content">
-					<h3>Esmerald</h3>
-					<p>$1299</p>
-					<div class="buybtn button"><a href="#">Buy</a></div>
-					</div>
+		<div id="catalog">
+			<div class="row cat-row">
+				<div class="col-md-6">
+						<div class="img-card" style="background-image: url(data/card-1.jpg);">
+							<div class="cat-overlay">
+								<div class="cat-content">
+									<a href="#" class="cat-a"></a>
+									<div class="cat-text"><h3>$854</h3><h2>Russian winter</h2></div>
+									<a href="#" class="cat-a-svg"><svg class="cat-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+										width="48" height="48"
+										viewBox="0 0 172 172"
+										style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#FFFFFF"><path d="M124.02813,18.40938c-10.88438,0 -21.23125,4.3 -29.025,11.95938l-9.00312,9.00313l-9.00312,-9.00313c-7.79375,-7.79375 -18.00625,-11.95938 -29.025,-11.95938c-11.01875,0 -21.23125,4.3 -29.025,11.95938c-7.65937,7.79375 -11.95937,18.00625 -11.95937,29.025c0,11.01875 4.3,21.23125 11.95937,28.89062l9.675,9.675c1.6125,1.6125 4.16563,1.6125 5.64375,0c1.6125,-1.6125 1.6125,-4.16562 0,-5.64375l-9.675,-9.675c-6.18125,-6.18125 -9.675,-14.5125 -9.675,-23.24687c0,-8.73437 3.35938,-17.06562 9.675,-23.24688c6.18125,-6.18125 14.5125,-9.675 23.24688,-9.675c8.73438,0 17.06563,3.35938 23.24688,9.675l11.825,11.825c1.6125,1.6125 4.16563,1.6125 5.64375,0l11.825,-11.825c12.9,-12.9 33.72813,-12.9 46.49375,0c6.18125,6.18125 9.675,14.5125 9.675,23.24688c0,8.73437 -3.35937,17.06563 -9.675,23.24687l-54.15313,54.55625c-1.74688,1.74687 -4.16562,2.6875 -6.71875,2.6875c-2.55313,0 -4.8375,-0.94063 -6.58437,-2.6875l-17.87188,-17.7375c-1.6125,-1.6125 -4.16562,-1.6125 -5.64375,0c-1.6125,1.6125 -1.6125,4.16562 0,5.64375l17.87188,17.87187c3.35938,3.35938 7.65937,5.10625 12.3625,5.10625c4.70313,0 9.00313,-1.88125 12.3625,-5.10625l54.69063,-54.69062c7.79375,-7.79375 11.95937,-18.00625 11.95937,-29.025c0,-11.01875 -4.3,-21.23125 -11.95937,-29.025c-7.92812,-7.65938 -18.275,-11.825 -29.15937,-11.825z"></path></g></g></svg>
+									</a>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="col-md-6">
+						<div class="img-card" style="background-image: url(data/card-2.jpg);">
+							<div class="cat-overlay">
+								<div class="cat-content">
+									<a href="#" class="cat-a"></a>
+									<div class="cat-text"><h3>$536</h3><h2>Birch forest</h2></div>
+									<a href="#" class="cat-a-svg"><svg class="cat-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+										width="48" height="48"
+										viewBox="0 0 172 172"
+										style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#FFFFFF"><path d="M124.02813,18.40938c-10.88438,0 -21.23125,4.3 -29.025,11.95938l-9.00312,9.00313l-9.00312,-9.00313c-7.79375,-7.79375 -18.00625,-11.95938 -29.025,-11.95938c-11.01875,0 -21.23125,4.3 -29.025,11.95938c-7.65937,7.79375 -11.95937,18.00625 -11.95937,29.025c0,11.01875 4.3,21.23125 11.95937,28.89062l9.675,9.675c1.6125,1.6125 4.16563,1.6125 5.64375,0c1.6125,-1.6125 1.6125,-4.16562 0,-5.64375l-9.675,-9.675c-6.18125,-6.18125 -9.675,-14.5125 -9.675,-23.24687c0,-8.73437 3.35938,-17.06562 9.675,-23.24688c6.18125,-6.18125 14.5125,-9.675 23.24688,-9.675c8.73438,0 17.06563,3.35938 23.24688,9.675l11.825,11.825c1.6125,1.6125 4.16563,1.6125 5.64375,0l11.825,-11.825c12.9,-12.9 33.72813,-12.9 46.49375,0c6.18125,6.18125 9.675,14.5125 9.675,23.24688c0,8.73437 -3.35937,17.06563 -9.675,23.24687l-54.15313,54.55625c-1.74688,1.74687 -4.16562,2.6875 -6.71875,2.6875c-2.55313,0 -4.8375,-0.94063 -6.58437,-2.6875l-17.87188,-17.7375c-1.6125,-1.6125 -4.16562,-1.6125 -5.64375,0c-1.6125,1.6125 -1.6125,4.16562 0,5.64375l17.87188,17.87187c3.35938,3.35938 7.65937,5.10625 12.3625,5.10625c4.70313,0 9.00313,-1.88125 12.3625,-5.10625l54.69063,-54.69062c7.79375,-7.79375 11.95937,-18.00625 11.95937,-29.025c0,-11.01875 -4.3,-21.23125 -11.95937,-29.025c-7.92812,-7.65938 -18.275,-11.825 -29.15937,-11.825z"></path></g></g></svg>
+									</a>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="col-md-6">
+					<a href="#">
+						<div class="img-card" style="background-image: url(data/card-3.jpg);">
+							<div class="cat-overlay">
+								<div class="cat-content">
+									<a href="#" class="cat-a"></a>
+									<div class="cat-text"><h3>$1000</h3><h2>Volcano</h2></div>
+									<a href="#" class="cat-a-svg"><svg class="cat-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+										width="48" height="48"
+										viewBox="0 0 172 172"
+										style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#FFFFFF"><path d="M124.02813,18.40938c-10.88438,0 -21.23125,4.3 -29.025,11.95938l-9.00312,9.00313l-9.00312,-9.00313c-7.79375,-7.79375 -18.00625,-11.95938 -29.025,-11.95938c-11.01875,0 -21.23125,4.3 -29.025,11.95938c-7.65937,7.79375 -11.95937,18.00625 -11.95937,29.025c0,11.01875 4.3,21.23125 11.95937,28.89062l9.675,9.675c1.6125,1.6125 4.16563,1.6125 5.64375,0c1.6125,-1.6125 1.6125,-4.16562 0,-5.64375l-9.675,-9.675c-6.18125,-6.18125 -9.675,-14.5125 -9.675,-23.24687c0,-8.73437 3.35938,-17.06562 9.675,-23.24688c6.18125,-6.18125 14.5125,-9.675 23.24688,-9.675c8.73438,0 17.06563,3.35938 23.24688,9.675l11.825,11.825c1.6125,1.6125 4.16563,1.6125 5.64375,0l11.825,-11.825c12.9,-12.9 33.72813,-12.9 46.49375,0c6.18125,6.18125 9.675,14.5125 9.675,23.24688c0,8.73437 -3.35937,17.06563 -9.675,23.24687l-54.15313,54.55625c-1.74688,1.74687 -4.16562,2.6875 -6.71875,2.6875c-2.55313,0 -4.8375,-0.94063 -6.58437,-2.6875l-17.87188,-17.7375c-1.6125,-1.6125 -4.16562,-1.6125 -5.64375,0c-1.6125,1.6125 -1.6125,4.16562 0,5.64375l17.87188,17.87187c3.35938,3.35938 7.65937,5.10625 12.3625,5.10625c4.70313,0 9.00313,-1.88125 12.3625,-5.10625l54.69063,-54.69062c7.79375,-7.79375 11.95937,-18.00625 11.95937,-29.025c0,-11.01875 -4.3,-21.23125 -11.95937,-29.025c-7.92812,-7.65938 -18.275,-11.825 -29.15937,-11.825z"></path></g></g></svg>
+									</a>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-6">
+						<div class="img-card" style="background-image: url(data/card-4.jpg);">
+							<div class="cat-overlay">
+								<div class="cat-content">
+									<a href="#" class="cat-a"></a>
+									<div class="cat-text"><h3>$322</h3><h2>Rocky mountain</h2></div>
+									<a href="#" class="cat-a-svg"><svg class="cat-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+										width="48" height="48"
+										viewBox="0 0 172 172"
+										style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#FFFFFF"><path d="M124.02813,18.40938c-10.88438,0 -21.23125,4.3 -29.025,11.95938l-9.00312,9.00313l-9.00312,-9.00313c-7.79375,-7.79375 -18.00625,-11.95938 -29.025,-11.95938c-11.01875,0 -21.23125,4.3 -29.025,11.95938c-7.65937,7.79375 -11.95937,18.00625 -11.95937,29.025c0,11.01875 4.3,21.23125 11.95937,28.89062l9.675,9.675c1.6125,1.6125 4.16563,1.6125 5.64375,0c1.6125,-1.6125 1.6125,-4.16562 0,-5.64375l-9.675,-9.675c-6.18125,-6.18125 -9.675,-14.5125 -9.675,-23.24687c0,-8.73437 3.35938,-17.06562 9.675,-23.24688c6.18125,-6.18125 14.5125,-9.675 23.24688,-9.675c8.73438,0 17.06563,3.35938 23.24688,9.675l11.825,11.825c1.6125,1.6125 4.16563,1.6125 5.64375,0l11.825,-11.825c12.9,-12.9 33.72813,-12.9 46.49375,0c6.18125,6.18125 9.675,14.5125 9.675,23.24688c0,8.73437 -3.35937,17.06563 -9.675,23.24687l-54.15313,54.55625c-1.74688,1.74687 -4.16562,2.6875 -6.71875,2.6875c-2.55313,0 -4.8375,-0.94063 -6.58437,-2.6875l-17.87188,-17.7375c-1.6125,-1.6125 -4.16562,-1.6125 -5.64375,0c-1.6125,1.6125 -1.6125,4.16562 0,5.64375l17.87188,17.87187c3.35938,3.35938 7.65937,5.10625 12.3625,5.10625c4.70313,0 9.00313,-1.88125 12.3625,-5.10625l54.69063,-54.69062c7.79375,-7.79375 11.95937,-18.00625 11.95937,-29.025c0,-11.01875 -4.3,-21.23125 -11.95937,-29.025c-7.92812,-7.65938 -18.275,-11.825 -29.15937,-11.825z"></path></g></g></svg>
+									</a>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="col-md-6">
+						<div class="img-card" style="background-image: url(data/card-5.jpg);">
+							<div class="cat-overlay">
+								<div class="cat-content">
+									<a href="#" class="cat-a"></a>
+									<div class="cat-text"><h3>$906</h3><h2>Valley</h2></div>
+									<a href="#" class="cat-a-svg"><svg class="cat-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+										width="48" height="48"
+										viewBox="0 0 172 172"
+										style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#FFFFFF"><path d="M124.02813,18.40938c-10.88438,0 -21.23125,4.3 -29.025,11.95938l-9.00312,9.00313l-9.00312,-9.00313c-7.79375,-7.79375 -18.00625,-11.95938 -29.025,-11.95938c-11.01875,0 -21.23125,4.3 -29.025,11.95938c-7.65937,7.79375 -11.95937,18.00625 -11.95937,29.025c0,11.01875 4.3,21.23125 11.95937,28.89062l9.675,9.675c1.6125,1.6125 4.16563,1.6125 5.64375,0c1.6125,-1.6125 1.6125,-4.16562 0,-5.64375l-9.675,-9.675c-6.18125,-6.18125 -9.675,-14.5125 -9.675,-23.24687c0,-8.73437 3.35938,-17.06562 9.675,-23.24688c6.18125,-6.18125 14.5125,-9.675 23.24688,-9.675c8.73438,0 17.06563,3.35938 23.24688,9.675l11.825,11.825c1.6125,1.6125 4.16563,1.6125 5.64375,0l11.825,-11.825c12.9,-12.9 33.72813,-12.9 46.49375,0c6.18125,6.18125 9.675,14.5125 9.675,23.24688c0,8.73437 -3.35937,17.06563 -9.675,23.24687l-54.15313,54.55625c-1.74688,1.74687 -4.16562,2.6875 -6.71875,2.6875c-2.55313,0 -4.8375,-0.94063 -6.58437,-2.6875l-17.87188,-17.7375c-1.6125,-1.6125 -4.16562,-1.6125 -5.64375,0c-1.6125,1.6125 -1.6125,4.16562 0,5.64375l17.87188,17.87187c3.35938,3.35938 7.65937,5.10625 12.3625,5.10625c4.70313,0 9.00313,-1.88125 12.3625,-5.10625l54.69063,-54.69062c7.79375,-7.79375 11.95937,-18.00625 11.95937,-29.025c0,-11.01875 -4.3,-21.23125 -11.95937,-29.025c-7.92812,-7.65938 -18.275,-11.825 -29.15937,-11.825z"></path></g></g></svg>
+									</a>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="col-md-6">
+						<div class="img-card" style="background-image: url(data/card-6.jpg);">
+							<div class="cat-overlay">
+								<div class="cat-content">
+									<a href="#" class="cat-a"></a>
+									<div class="cat-text"><h3>$362</h3><h2>Lonely house</h2></div>
+									<a href="#" class="cat-a-svg"><svg class="cat-svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+										width="48" height="48"
+										viewBox="0 0 172 172"
+										style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#FFFFFF"><path d="M124.02813,18.40938c-10.88438,0 -21.23125,4.3 -29.025,11.95938l-9.00312,9.00313l-9.00312,-9.00313c-7.79375,-7.79375 -18.00625,-11.95938 -29.025,-11.95938c-11.01875,0 -21.23125,4.3 -29.025,11.95938c-7.65937,7.79375 -11.95937,18.00625 -11.95937,29.025c0,11.01875 4.3,21.23125 11.95937,28.89062l9.675,9.675c1.6125,1.6125 4.16563,1.6125 5.64375,0c1.6125,-1.6125 1.6125,-4.16562 0,-5.64375l-9.675,-9.675c-6.18125,-6.18125 -9.675,-14.5125 -9.675,-23.24687c0,-8.73437 3.35938,-17.06562 9.675,-23.24688c6.18125,-6.18125 14.5125,-9.675 23.24688,-9.675c8.73438,0 17.06563,3.35938 23.24688,9.675l11.825,11.825c1.6125,1.6125 4.16563,1.6125 5.64375,0l11.825,-11.825c12.9,-12.9 33.72813,-12.9 46.49375,0c6.18125,6.18125 9.675,14.5125 9.675,23.24688c0,8.73437 -3.35937,17.06563 -9.675,23.24687l-54.15313,54.55625c-1.74688,1.74687 -4.16562,2.6875 -6.71875,2.6875c-2.55313,0 -4.8375,-0.94063 -6.58437,-2.6875l-17.87188,-17.7375c-1.6125,-1.6125 -4.16562,-1.6125 -5.64375,0c-1.6125,1.6125 -1.6125,4.16562 0,5.64375l17.87188,17.87187c3.35938,3.35938 7.65937,5.10625 12.3625,5.10625c4.70313,0 9.00313,-1.88125 12.3625,-5.10625l54.69063,-54.69062c7.79375,-7.79375 11.95937,-18.00625 11.95937,-29.025c0,-11.01875 -4.3,-21.23125 -11.95937,-29.025c-7.92812,-7.65938 -18.275,-11.825 -29.15937,-11.825z"></path></g></g></svg>
+									</a>
+								</div>
+							</div>
+						</div>
 				</div>
 			</div>
+		</div>
 	</div>
 
 <!----------------------------------------Footer---------------------------------------->
@@ -304,5 +373,4 @@
 			</div>
 		</div>
 	</div>
-
-</body>	
+</body>

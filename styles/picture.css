@@ -1,0 +1,294 @@
+/* Links normolize */
+
+a{
+	color: #FFFFFF;
+}
+a:hover{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+/* Picture and title */
+
+#picture{
+	background-position: center top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 600px;
+	margin-top: 120px;
+	box-shadow: 0 2px 12px 0 rgba(0,0,0,0.6);
+}
+
+#title{
+	margin-top: 50px;
+	display: flex;
+	align-items: flex-start;
+}
+
+#title h1{
+	color: #1C1C1C;
+	font-family: "Bebas Neue Bold";
+	font-size: 82px;
+	letter-spacing: 5.51px;
+	line-height: 82px;
+}
+
+#title span{
+	color: #F79753;
+}
+
+#picture-name{
+	width: 50%;
+}
+
+.button{
+	border-radius: 7px;
+	box-shadow: 2px 2px 8px 0 rgba(0,0,0,0.4);
+	height: 64px;
+	color: #FFF;
+	font-family: "Bebas Neue Bold";
+	font-size: 36px;
+	letter-spacing: 2.42px;
+	line-height: 68px;
+	text-align: center;
+	width: 216px;
+	margin-left: 20px;
+	cursor: pointer;
+	transition: all .05s;
+}
+
+.button a{
+	display: block;
+}
+
+#btn-card{
+	background-color: #F79753;
+	margin-left: auto;
+}
+#btn-buy{
+	background-color: #424242;
+}
+
+/* Subtitle */
+
+#subtitle{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+
+.subtitle-block{
+	width: 540px;
+	border-radius: 7px;
+	background-color: #FFF;
+	box-shadow: 2px 2px 8px 0 rgba(0,0,0,0.1);
+	color: #333;
+	font-family: 'Nunito', sans-serif;
+	font-size: 22px;
+	line-height: 29px;
+	padding: 20px;
+	padding-bottom: 60px;
+}
+
+.subtitle-block h1{
+	color: #333;
+	font-family: "Bebas Neue Bold";
+	font-size: 48px;
+	letter-spacing: 4.45px;
+	line-height: 48px;
+	text-align: center;
+}
+
+.subtitle-block p{
+	text-align: justify;
+}
+
+.subtitle-block span{
+	letter-spacing: .8px;
+	font-weight: 600;
+}
+
+.subtitle-block li{
+	margin-top: 5px;
+}
+
+/* See more */
+
+#more-back{
+	background-color: rgba(0,0,0,.08);
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 80px;
+}
+
+#more h1{
+	color: #333;
+	font-family: "Bebas Neue Bold";
+	font-size: 48px;
+	letter-spacing: 4.45px;
+	line-height: 48px;
+}
+
+#more .row{
+	margin-top: 24px;
+}
+
+.more-card{
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 255px;
+	border-radius: 7px;
+	box-shadow: 2px 2px 12px 0 rgba(0,0,0,0.4);
+	display: flex;
+	transition: .1s;
+	color: #F2F2F2;
+	cursor: pointer;
+	text-align: center;
+	display: flex;
+	align-items: flex-end;
+	font-size: 20px;
+	font-family: 'Nunito', sans-serif;
+	letter-spacing: 2.5px;
+}
+
+.more-name{
+	width: 100%;
+	background-color: rgba(0,0,0,.6);
+	border-radius: 0px 0px 7px 7px;
+}
+
+/* Media requests */
+
+@media only screen and (max-width: 1200px){
+	.subtitle-block{
+		width: 450px;
+	}
+
+	.more-card{
+		height: 210px;
+	}
+}
+
+@media only screen and (max-width: 992px){
+	.button{
+		font-size: 32px;
+	}
+
+	#title h1{
+		font-size: 64px;
+		line-height: 64px;
+		word-break: break-all;
+	}
+
+	.subtitle-block{
+		width: 340px;
+		padding-bottom: 0px;
+	}
+
+	.more-card{
+		height: 150px;
+	}
+}
+
+@media only screen and (max-width: 768px){
+	#picture{
+		height: 350px;
+		margin-top: 60px;
+	}
+
+	#title{
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#picture-name{
+		width: 100%;
+		text-align: center;
+	}
+
+	#title h1{
+		font-size: 82px;
+		line-height: 82px;
+	}
+
+	#btn-card{
+		margin-left: 0px;
+		margin-top: 40px;
+	}
+
+	.button{
+		width: 75%;
+		height: 86px;
+		line-height: 86px;
+		font-size: 42px;
+		margin-left: 0px;
+		margin-top: 20px;
+	}
+
+	#subtitle{
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.subtitle-block{
+		margin-top: 20px;
+	}
+
+	.subtitle-block ul{
+		padding-left: 25px;
+	}
+
+	.more-card{
+		margin-top: 20px;
+		height: 210px;
+	}
+}
+
+@media only screen and (max-width: 576px){
+	#picture{
+		margin-top: 90px;
+		width: 90%;
+	}
+
+	#title h1{
+		font-size: 64px;
+		line-height: 64px;
+	}
+
+	.button{
+		width: 100%;
+	}
+
+	.subtitle-block{
+		width: 290px;
+		font-size: 17px;
+	}
+}
+
+/* Animations */
+
+.button:hover{
+	transform: scale(1.04);
+	box-shadow: 2px 4px 18px 0 rgba(0,0,0,0.6);
+	transition: all .05s;
+}
+
+.button:active{
+	transform: scale(.98);
+	box-shadow: 0px 0px 8px 0 rgba(0,0,0,0.4);
+	transition: all .02s;
+}
+
+.more-card:hover{
+	transform: scale(1.05);
+	color: #F79753;
+	box-shadow: 2px 2px 20px 0 rgba(0,0,0,0.6);
+}
+
+.more-card:active{
+	transform: scale(1.03);
+	color: #F79753;
+	box-shadow: 2px 2px 12px 0 rgba(0,0,0,0.4);
+}

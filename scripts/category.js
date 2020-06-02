@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
  ////////////////////////////////// col-left, col-right replacement //////////////////////////////////
 
-	var cards = document.getElementsByClassName('cat-card');
+	var cards = document.getElementsByClassName('img-card');
 
 	if (window.innerWidth > 767){
 		for (var i = 0; i < cards.length; i++){

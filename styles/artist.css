@@ -1,0 +1,84 @@
+#artist-back{
+	background-image: url(../data/artist.png);
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 644px;
+	box-shadow: 2px 2px 8px 0 rgba(0,0,0,0.6);
+}
+
+#content{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	height: 100%;
+}
+
+#content h1{
+	font-family: "Bebas Neue Bold";
+	font-size: 100px;
+	line-height: 100px;
+	color: #F2F2F2;
+}
+
+#content h1 span{
+	color: #F79753;
+}
+
+#artist-text-desktop{
+	width: 65%;
+	color: #FFF;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 300;
+	font-size: 22px;
+	line-height: 24px;
+	margin-bottom: 20px;
+}
+
+#artist-text-mobile{
+	display: none;
+	width: 65%;
+	color: #FFF;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 300;
+	font-size: 22px;
+	line-height: 24px;
+	margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 767px){
+
+	#artist-back{
+		height: 460px;
+		cursor: pointer;
+	}
+
+	#content{
+		height: 100%;
+	}
+
+	#content h1{
+		font-size: 72px;
+		line-height: 72px;
+		text-align: center;
+	}
+
+	#artist-text-mobile{
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+
+	#artist-text-desktop{
+		display: none;
+	}
+
+	#artist-text-mobile span{
+		color: #F79753;
+	}
+
+	#artist-back-a{
+		display: block;
+		width: 100%;
+	}
+}
