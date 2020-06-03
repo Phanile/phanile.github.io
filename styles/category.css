@@ -22,6 +22,7 @@
 	opacity: .8;
 	user-select: none;
 	word-break: break-all;
+	width: auto;
 }
 
 #sort{
@@ -110,13 +111,13 @@ a:hover{
 	color: #FFF;
 }
 
-@media only screen and (max-width: 991px){
+@media only screen and (max-width: 992px){
 	.img-card{
 		height: 180px;
 	}
 }
 
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 768px){
 
 	.img-card{
 		height: 220px;
@@ -174,7 +175,7 @@ a:hover{
 	}
 }
 
-@media only screen and (max-width: 575px){
+@media only screen and (max-width: 576px){
 	
 	.img-card{
 		height: 160px;
@@ -184,12 +185,17 @@ a:hover{
 		margin-top: 30px;
 	}
 
+	#title h1{
+		word-break: break-all;
+	}
+
 }
 
 @media only screen and (max-width: 375px){
 
 	#title h1{
 		font-size: 40px;
+		line-height: 40px;
 	}
 
 	#sort-block{

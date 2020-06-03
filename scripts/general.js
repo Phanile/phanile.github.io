@@ -16,29 +16,50 @@ function headerAnimation () {
 function expandAnim () {
 	var header = document.getElementsByClassName('header')[0];
 		headerBack = document.getElementById('header-back');
-		user = document.getElementById('user');
-		phone = document.getElementById('phone');
-		heart = document.getElementById('heart');
-		cart = document.getElementById('cart');
+		headerButtons = document.getElementById('header').childNodes;
 		isOpen = false;
-	
-	header.onmouseenter = function(){
-		isOpen = true;
-		this.style.maxHeight = '9000px';
-		user.setAttribute('src', 'data/user-dark.svg');
-		phone.setAttribute('src', 'data/phone-dark.svg');
-		heart.setAttribute('src', 'data/heart-dark.svg');
-		cart.setAttribute('src', 'data/cart-dark.svg');
-	}
-	header.onmouseleave = function(){
+
+	function menuClose () {
 		isOpen = false;
-		this.style.maxHeight = '60px';
+		header.classList.remove('header-open');
+		headerBack.style.backgroundColor = '';
+		headerBack.style.transition = '';
 		setTimeout(function(){
 			user.setAttribute('src', 'data/user.svg');
 			phone.setAttribute('src', 'data/phone.svg');
 			heart.setAttribute('src', 'data/heart.svg');
 			cart.setAttribute('src', 'data/cart.svg');
 		}, 300)
+	}	
+	
+	for (var i = 1; i < 4; i += 2){
+		headerButtons[i].addEventListener('click', function(){
+			if (!isOpen){
+				isOpen = true;
+				header.classList.add('header-open');
+				headerBack.style.backgroundColor = '#FFFFFF';
+				headerBack.style.transition = '0s';
+				user.setAttribute('src', 'data/user-dark.svg');
+				phone.setAttribute('src', 'data/phone-dark.svg');
+				heart.setAttribute('src', 'data/heart-dark.svg');
+				cart.setAttribute('src', 'data/cart-dark.svg');
+			}else{
+				isOpen = false;
+				header.classList.remove('header-open');
+				headerBack.style.backgroundColor = '';
+				headerBack.style.transition = '';
+				setTimeout(function(){
+					user.setAttribute('src', 'data/user.svg');
+					phone.setAttribute('src', 'data/phone.svg');
+					heart.setAttribute('src', 'data/heart.svg');
+					cart.setAttribute('src', 'data/cart.svg');
+				}, 300)
+			}
+		});
+	}
+
+	header.onmouseleave = function(){
+		menuClose();
 	}
 }
 

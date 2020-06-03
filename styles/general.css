@@ -88,18 +88,6 @@ h1{
 		height: 24px;
 	}
 
-.header:hover{
-	transition: all 1.25s ease .02s, background-color .005s;
-	color: #1C1C1C;
-	background-color: #FFF;
-	box-shadow: 0 0 12px 0 rgba(0,0,0,0.08);
-}
-
-.header:hover #header-back{
-	transition: all 0s;
-	background-color: #FFF;
-}
-
 #header-line{
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -109,11 +97,6 @@ h1{
 	transition: all .4s .1s, opacity 0.001s .399s;
 }
 
-.header:hover #header-line{
-	width: 70%;
-	opacity: 100%;
-	transition: all .4s .1s, opacity 0s .001s;
-}
 
 #header-open{
 	display: flex;
@@ -181,21 +164,6 @@ h1{
 		margin-top: 20px;
 	}
 
-.header:hover .categories{
-	transition: opacity .5s .15s;
-	opacity: .8;
-}
-
-.header:hover .artists{
-	transition: opacity .5s .2s;
-	opacity: .8;
-}
-
-.header:hover .contact{
-	transition: opacity .5s .25s;
-	opacity: .8;
-}
-
 .head-text:hover{
 	text-decoration: none;
 	background: rgba(0, 0, 0, .05);
@@ -214,6 +182,35 @@ h1{
 
 .not-main #header-back{
 	height: 60px;
+}
+
+.header-open{
+	max-height: 9000px;
+	transition: all 1.25s ease .02s, background-color .005s;
+	color: #1C1C1C;
+	background-color: #FFF;
+	box-shadow: 0 0 12px 0 rgba(0,0,0,0.08);
+}
+
+.header-open #header-line{
+	width: 70%;
+	opacity: 100%;
+	transition: all .4s .1s, opacity 0s .001s;
+}
+
+.header-open .categories{
+	transition: opacity .5s .15s;
+	opacity: .8;
+}
+
+.header-open .artists{
+	transition: opacity .5s .2s;
+	opacity: .8;
+}
+
+.header-open .contact{
+	transition: opacity .5s .25s;
+	opacity: .8;
 }
 
 .not-main{
@@ -349,7 +346,7 @@ h1{
 		transition: all .4s .1s, opacity 0s .001s;
 	}
 
-	#mobile .categories, .mobile .artists{
+	#mobile .categories, #mobile .artists{
 		transition: opacity .5s .15s;
 		opacity: .8;
 	}
@@ -489,12 +486,17 @@ body {
 				}
 
 				@media only screen and (max-width: 768px) {
-					#footer .non-mobile, #choise .button{
+					#footer .non-mobile, #footer .col-md-2, #choise .button{
 						display: none;
 					}
 
-					#footer .col-md-2{
-						display: none;
+					.col-md-3{
+						text-align: center;
+						align-items: center;
+					}
+
+					.icons{
+						width: 100px;
 					}
 				}
 

@@ -99,8 +99,20 @@ a:hover{
 	text-align: center;
 }
 
+#artist{
+	color: #F79753;
+}
+#artist:hover{
+	text-decoration-line: underline;
+}
+
 .subtitle-block p{
+	margin-top: 10px;
 	text-align: justify;
+}
+
+.subtitle-block ul{
+	margin-top: 10px;
 }
 
 .subtitle-block span{
