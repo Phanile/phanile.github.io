@@ -485,7 +485,7 @@ body {
 					margin-top: 8px;
 				}
 
-				@media only screen and (max-width: 768px) {
+				@media only screen and (max-width: 767px) {
 					#footer .non-mobile, #footer .col-md-2, #choise .button{
 						display: none;
 					}
@@ -500,7 +500,7 @@ body {
 					}
 				}
 
-				@media only screen and (min-width: 768px) and (max-width: 1199px) {
+				@media only screen and (min-width: 767px) and (max-width: 1199px) {
 					#footer a{
 						font-size: 13px;
 						padding-top: 4px;

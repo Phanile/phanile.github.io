@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		closeIcon = document.getElementById('close-icon'),
 		button = document.getElementById('checkout-btn'),
 		inputBlock = document.getElementById('input-block-full'),
+		overlay = document.getElementById('background-overlay'),
 		inputContentFirst = inputBlock.innerHTML,
 		nextBtn = document.getElementById('next-btn'),
 		arrows = document.getElementsByClassName('arrows'),
@@ -20,9 +21,19 @@ document.addEventListener('DOMContentLoaded', function(){
 				changeInput();
 			});
 
-			arrows[1].addEventListener('click', function(){
-				changeInput();
-			});
+			overlay.onclick = function(event){
+				var target = event.target;
+
+				if (isOpen && target.id == 'background-overlay'){
+					isOpen = false;
+					popUp.classList.remove('open-pop-up');
+					enableScroll();
+
+					nextBtn.removeEventListener('click', function(){
+						changeInput();
+					});
+				};
+			};
 
 		};
 	});
@@ -41,8 +52,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	function changeInput () {
 		inputBlock.innerHTML = inputContentSecond;
-		arrows[1].style.opacity = '0';
-		arrows[1].style.cursor = 'default';
 		arrows[0].style.cursor = 'pointer';
 		arrows[0].style.opacity = '1';
 
@@ -55,8 +64,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	function changeInputBack () {
 		inputBlock.innerHTML = inputContentFirst;
-		arrows[1].style.opacity = '1';
-		arrows[1].style.cursor = 'pointer';
 		arrows[0].style.cursor = 'default';
 		arrows[0].style.opacity = '0';
 
@@ -77,22 +84,4 @@ document.addEventListener('DOMContentLoaded', function(){
 	function enableScroll() {
 	    window.onscroll = function() {};
 	};
-
-	function onClickClose(elem) { // вызвать в момент показа окна, где elem - окно
-	    function outsideClickListener(event) {
-	        if (!elem.contains(event.target)) {  // проверяем, что клик не по элементу
-	            if (isOpen){
-					isOpen = false;
-					popUp.classList.remove('open-pop-up');
-					enableScroll();
-
-					nextBtn.removeEventListener('click', function(){
-						changeInput();
-					});
-				};
-	            document.removeEventListener('click', outsideClickListener);
-	        }
-	    }
-	    document.addEventListener('click', outsideClickListener);
-	}
 });

@@ -51,7 +51,7 @@
 
 .cart-card h2{
 	color: #F79753;
-	font-family: "Bebas Neue Regular";
+	font-family: "Bebas Neue";
 	font-size: 48px;
 	letter-spacing: 2.29px;
 	line-height: 48px;
@@ -164,24 +164,10 @@
 	height: 718px;
 	width: 656px;
 	border-radius: 7px;
-	transition: all 2s;
 }
 
 .open-pop-up #close-icon{
-	position: absolute;
-    right: 13px;
-    top: 10px;
-    cursor: pointer;
-    line-height: 24px;
-    font-family: Century Gothic;
-    font-size: 24px;
-}
-
-.open-pop-up #close-icon img{
-	height: 20px;
-	width: 20px;
-	margin-bottom: 8px;
-	opacity: .8;
+	display: none;
 }
 
 .open-pop-up #delivery-title{
@@ -299,7 +285,7 @@
 	line-height: 36px;
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 767px){
 
 	.cart-card{
 		height: auto;
@@ -342,6 +328,44 @@
 	}
 }
 
+@media only screen and (max-width: 576px){
+
+	.open-pop-up #main-pop-up{
+		height: 100%;
+		width: 100%;
+		overflow: scroll;
+	}
+
+	.open-pop-up #next-btn{
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
+
+	.button{
+		height: 54px;
+		line-height: 58px;
+		font-size: 28px;
+	}
+
+	.open-pop-up #close-icon{
+		display: block;
+		position: absolute;
+	    right: 13px;
+	    top: 10px;
+	    cursor: pointer;
+	    line-height: 24px;
+	    font-family: Century Gothic;
+	    font-size: 24px;
+	}
+
+	.open-pop-up #close-icon img{
+		height: 20px;
+		width: 20px;
+		margin-bottom: 8px;
+		opacity: .8;
+	}
+
+}
 /* Animations */
 
 .cart-card:hover{
