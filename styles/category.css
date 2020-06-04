@@ -185,17 +185,12 @@ a:hover{
 		margin-top: 30px;
 	}
 
-	#title h1{
-		word-break: break-all;
-	}
-
 }
 
 @media only screen and (max-width: 375px){
 
 	#title h1{
 		font-size: 40px;
-		line-height: 40px;
 	}
 
 	#sort-block{
