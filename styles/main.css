@@ -7,6 +7,7 @@
 	background-repeat: no-repeat;
 	height: 800px;
 	box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.4);
+	margin-top: 0px;
 }
 
 	#middle h1{
@@ -15,6 +16,7 @@
 		font-size: 148px;
 		letter-spacing: 9.95px;
 		vertical-align: middle;
+		line-height: normal;
 	}
 
 	#middle h3{

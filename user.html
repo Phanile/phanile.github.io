@@ -1,177 +1,20 @@
 <!DOCTYPE html>
 <head>
-	<title>Art</title>
+	<title>Verachill</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="styles/general.css">
-	<link rel="stylesheet" type="text/css" href="styles/main.css">
-	<script type="text/javascript" >
-		document.addEventListener('DOMContentLoaded', function(){
-			headerAnimation();
-		});
-
-		function headerAnimation () {
-			if (window.innerWidth > 767){//-------- device width
-				expandAnim();
-			}
-			else{
-				expandAnimMobile();
-				choiseLink = document.getElementsByClassName('a-full')[0];
-				choiseLink.setAttribute('id', 'a-full');
-			}
-		}
-
-		//menu
-
-		function expandAnim () {
-			var header = document.getElementsByClassName('header')[0];
-				headerBack = document.getElementById('header-back');
-				headerButtons = document.getElementById('header').childNodes;
-				isOpen = false;
-
-			function scrollUpdate () {
-				var coord = pageYOffset;
-
-				if (coord > 700 && isOpen == false){//-------- height for header
-					headerBack.style.height = '60px';
-				} 
-				else{
-					headerBack.style.height = '0px';
-				}
-			}
-
-			function menuClose () {
-				isOpen = false;
-				header.classList.remove('header-open');
-				headerBack.style.backgroundColor = '';
-				headerBack.style.transition = '';
-				setTimeout(function(){
-					user.setAttribute('src', 'data/user.svg');
-					phone.setAttribute('src', 'data/phone.svg');
-					heart.setAttribute('src', 'data/heart.svg');
-					cart.setAttribute('src', 'data/cart.svg');
-				}, 300)
-			}
-
-			scrollUpdate()
-
-			
-			for (var i = 1; i < 8; i += 2){
-				if (i != 5){
-					headerButtons[i].addEventListener('click', function(){
-						if (!isOpen){
-							isOpen = true;
-							header.classList.add('header-open');
-							headerBack.style.backgroundColor = '#FFFFFF';
-							headerBack.style.transition = '0s';
-							user.setAttribute('src', 'data/user-dark.svg');
-							phone.setAttribute('src', 'data/phone-dark.svg');
-							heart.setAttribute('src', 'data/heart-dark.svg');
-							cart.setAttribute('src', 'data/cart-dark.svg');
-							home.setAttribute('src', 'data/home-dark.svg');
-						}else{
-							isOpen = false;
-							header.classList.remove('header-open');
-							headerBack.style.backgroundColor = '';
-							headerBack.style.transition = '';
-							setTimeout(function(){
-								user.setAttribute('src', 'data/user.svg');
-								phone.setAttribute('src', 'data/phone.svg');
-								heart.setAttribute('src', 'data/heart.svg');
-								cart.setAttribute('src', 'data/cart.svg');
-								home.setAttribute('src', 'data/home.svg');
-							}, 300)
-						}
-					});
-				}
-			}
-
-			header.onmouseleave = function(){
-				menuClose();
-				scrollUpdate()
-			}
-
-			window.addEventListener('scroll', function() {
-				scrollUpdate()
-			});
-		}
-
-		//menu mobile
-
-		function expandAnimMobile () {
-			var button = document.getElementById('menu');
-				header = document.getElementsByClassName('header')[0];
-				headerOverlay = document.getElementsByClassName('header-overlay')[0];
-				svgMain = document.getElementsByClassName('a-icon');
-				categoriesBlock = document.getElementsByClassName('categories')[0];
-				artistsBlock = document.getElementsByClassName('artists')[0];
-				artistsText = document.createElement('p');
-				categoriesText = document.createElement('p');
-				
-			user.setAttribute('src', 'data/user-dark.svg');
-			heart.setAttribute('src', 'data/heart-dark.svg');
-			cart.setAttribute('src', 'data/cart-dark.svg');
-			home.setAttribute('src', 'data/home-dark.svg');
-
-			categoriesText.className = 'head-text h';
-			artistsText.className = 'head-text h';
-			categoriesText.innerHTML = 'Categories';
-			artistsText.innerHTML = 'Artists';
-
-			button.addEventListener('click', function(){
-				if (header.id != 'mobile'){              //with open
-					header.style.transition = '0s';
-					header.style.zIndex = '10';
-					header.setAttribute('id', 'mobile');
-					headerOverlay.setAttribute('id', 'header-overlay');
-					artistsBlock.prepend(artistsText);
-					categoriesBlock.prepend(categoriesText);
-					onClickClose(header);
-					for (var i = 0; i < 6; i++){
-						if (i != 1){
-							svgMain[i].style.display  = 'block';
-						};
-					};
-				}
-				else{              //with close
-					header.removeAttribute('id', 'mobile');
-					headerOverlay.removeAttribute('id', 'header-overlay');
-					header.style.zIndex = '4';
-					for (var i = 0; i < 6; i++){
-						if (i != 1){
-							svgMain[i].style.display  = 'none';
-						};
-					};
-				}
-			})
-		}
-
-		//Close menu
-
-		function onClickClose(elem) { // вызвать в момент показа окна, где elem - окно
-		    function outsideClickListener(event) {
-		        if (!elem.contains(event.target)) {  // проверяем, что клик не по элементу
-		            elem.removeAttribute('id', 'mobile'); //скрыть
-		            headerOverlay.removeAttribute('id', 'header-overlay'); //скрыть
-					for (var i of svgMain){
-						i.style.display  = 'none';
-					}
-		            document.removeEventListener('click', outsideClickListener);
-		        }
-		    }
-		    document.addEventListener('click', outsideClickListener);
-		}
-	</script>
-	<script type="text/javascript" src='scripts/main.js'></script>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@200;300;400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script type="text/javascript" src='scripts/general.js'></script>
+	<link rel="stylesheet" type="text/css" href="styles/general.css">
+	<link rel="stylesheet" type="text/css" href="styles/user.css">
 </head>
 
 <body>
-
+	
 <!----------------------------------------Header---------------------------------------->
 
-	<div class="container-fluid header">
+	<div class="container-fluid header not-main">
 		<div id="header-back"></div>
 		<button id="menu">
 			<div class="menu-block"></div>
@@ -217,59 +60,40 @@
 
 <!----------------------------------------Middle---------------------------------------->
 
-	<div class="container-fluid" id="middle">
-		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-10">
-				<h1 class="text-center">ART FOR ALL</h1><h3 class="text-center">Explore yourself with our paintings</h3>
-			</div>
-			<div class="col-md-1"></div>
+<div class="container" id="middle">
+	<div id="reg">
+		<div id="title">
+			<h1>My account</h1>
 		</div>
-	</div>
-
-<!----------------------------------------Categories---------------------------------------->
-
-	<div class='container' id='categories'>
-		<h2>CATEGORIES</h2>
-		<div class="row">
-			<div class="col-md-3"><a href="category.html"><div class="category-card" style="background-image: url(data/landscape.jpg);"><p class="categories-name">landscape</p></div></a></div>
-			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/abstract.jpg);"><p class="categories-name">abstract</p></div></a></div>
-			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/black-and-white.jpg);"><p class="categories-name">blackwhite</p></div></a></div>
-			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/portrait.jpg);"><p class="categories-name">portrait</p></div></a></div>
-		</div>
-	</div>
-
-<!----------------------------------------Artist---------------------------------------->
-
-	<div class="container-fluid" id="artist">
-		<div class="container content">
-			<h1>SARINE <span>CARLILE</span></h1>
-			<p>Our first and head artist</p>
-			<div class="morebtn button"><a href="artist.html">More</a></div>
-		</div>
-	</div>
-
-<!----------------------------------------Our choise---------------------------------------->
-
-	<div class='container' id='choise'>
-		<h2>OUR CHOISE</h2>
-			<div class="container picture">
-				<a href="picture.html" class="a-full"></a>
-				<div class="overlay">
-					<div class="container content">
-					<h3>Esmerald</h3>
-					<p>$1299</p>
-					<div class="buybtn button"><a href="picture.html">Buy</a></div>
-					</div>
+		<div id="input-block">
+			<form>
+				<h2>Register</h2>
+				<label class="first" for="username">Name</label>
+					<input id="username" type="text" value="Verachill" required />
+				<label for="email">Email</label>
+					<input id="email" type="email" value="roman_rogulenko_228@mail.ru" required />
+				<label for="password">Password</label>
+					<input id="password" type="password" maxlength="20" minlength="6" required />
+				<label for="password">Confirm password</label>
+					<input id="password" type="password" maxlength="20" minlength="6" required />
+				<div id="buttons-block">
+					<a href="user.html"><input id="register-btn" class="button" type="submit" value="Save changings" /></a>
 				</div>
+			</form>
+
+			<div id="line"></div>
+
+			<div id="pseudo-form">
+				<h2>Contact us</h2>
+				<p>You can help us become better. Write us suggestions for service improvements. If you are ready to cooperate with us or offer us your services, we are always happy to help.</p>
+				<form id="textarea-form">
+					<textarea maxlength="1000" id="message"></textarea>
+					<input id="message-btn" class="button" type="submit" value="Send" />
+				</form>
 			</div>
+		</div>
 	</div>
-
-<!----------------------------------------Reviews---------------------------------------->
-
-	<div>
-		
-	</div>
+</div>
 
 <!----------------------------------------Footer---------------------------------------->
 	<div class='container-fluid' id="footer">
@@ -345,5 +169,4 @@
 			</div>
 		</div>
 	</div>
-
-</body>	
+</body>

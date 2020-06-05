@@ -15,7 +15,6 @@ a:hover{
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 600px;
-	margin-top: 120px;
 	box-shadow: 0 2px 12px 0 rgba(0,0,0,0.6);
 	cursor: zoom-in;
 }
@@ -195,17 +194,16 @@ a:hover{
 	justify-content: center;
 }
 
-@media only screen and (orientation: portrait){
-	.open-pop-up-img #background-overlay-img{
-		overflow: scroll;
-	}
-}
-
 .open-pop-up-img #main-pop-up-img{
+	background-image: url('../data/esmerald.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 95%;
+	height: 95vh;
+	width: 95vw;
 	position: relative;
 }
 
@@ -260,7 +258,7 @@ a:hover{
 	text-align: center;
 }
 
-.open-pop-up-to-cart #continue-btn{
+.open-pop-up-to-cart .choise-btn{
 	background-color: #F79753;
 	font-size: 28px;
 	letter-spacing: 1.88px;
@@ -269,9 +267,6 @@ a:hover{
 
 .open-pop-up-to-cart #to-cart-btn{
 	background-color: #424242;
-	font-size: 28px;
-	letter-spacing: 1.88px;
-	margin-left: 0px;
 }
 
 .open-pop-up-to-cart #main-pop-up-to-cart p{
@@ -280,10 +275,6 @@ a:hover{
 	font-family: 'Nunito', sans-serif;
 	font-weight: 600;
 	font-size: 20px;
-}
-
-@media only screen and (max-width: 768px){
-
 }
 
 /* ------------- Pop-up windows - buy ------------- */
@@ -308,7 +299,6 @@ a:hover{
 	#title h1{
 		font-size: 64px;
 		line-height: 64px;
-		word-break: break-all;
 	}
 
 	.subtitle-block{
@@ -374,7 +364,7 @@ a:hover{
 		height: 210px;
 	}
 
-	.open-pop-up-to-cart #continue-btn{
+	.open-pop-up-to-cart .choise-btn{
 		width: 216px;
 		height: 64px;
 		background-color: #F79753;
@@ -386,14 +376,7 @@ a:hover{
 	}
 
 	.open-pop-up-to-cart #to-cart-btn{
-		width: 216px;
-		height: 64px;
 		background-color: #424242;
-		font-size: 28px;
-		letter-spacing: 1.88px;
-		margin-left: 0px;
-		line-height: 64px;
-		margin-top: 0px;
 	}
 }
 
@@ -471,6 +454,10 @@ a:hover{
 	height: 0px;
 	width: 0px;
 	transition: all 2s;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .open-pop-up #main-pop-up{
@@ -630,7 +617,7 @@ a:hover{
 	box-shadow: 2px 2px 12px 0 rgba(0,0,0,0.4);
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 767px){
 	/* Deleting animations on mobile */
 
 	.button:hover{
@@ -654,6 +641,10 @@ a:hover{
 	color: #FFFFFF;
 	box-shadow: 2px 2px 12px 0 rgba(0,0,0,0.4);
 	}
+
+	.open-pop-up #next-btn{
+		width: 216px;
+	}
 }
 
 @media only screen and (max-width: 576px){
@@ -667,6 +658,7 @@ a:hover{
 	.open-pop-up #next-btn{
 		margin-bottom: 20px;
 		margin-top: 20px;
+		width: 216px;
 	}
 
 	.button{
@@ -693,4 +685,10 @@ a:hover{
 		opacity: .8;
 	}
 
+}
+
+@media only screen and (max-height: 620px){
+	.open-pop-up #main-pop-up{
+		justify-content: flex-start;
+	}
 }

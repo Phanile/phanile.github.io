@@ -19,6 +19,8 @@ function expandAnim () {
 		headerButtons = document.getElementById('header').childNodes;
 		isOpen = false;
 
+	console.log(headerButtons)
+
 	function menuClose () {
 		isOpen = false;
 		header.classList.remove('header-open');
@@ -29,33 +31,38 @@ function expandAnim () {
 			phone.setAttribute('src', 'data/phone.svg');
 			heart.setAttribute('src', 'data/heart.svg');
 			cart.setAttribute('src', 'data/cart.svg');
+			home.setAttribute('src', 'data/home.svg');
 		}, 300)
 	}	
 	
-	for (var i = 1; i < 4; i += 2){
-		headerButtons[i].addEventListener('click', function(){
-			if (!isOpen){
-				isOpen = true;
-				header.classList.add('header-open');
-				headerBack.style.backgroundColor = '#FFFFFF';
-				headerBack.style.transition = '0s';
-				user.setAttribute('src', 'data/user-dark.svg');
-				phone.setAttribute('src', 'data/phone-dark.svg');
-				heart.setAttribute('src', 'data/heart-dark.svg');
-				cart.setAttribute('src', 'data/cart-dark.svg');
-			}else{
-				isOpen = false;
-				header.classList.remove('header-open');
-				headerBack.style.backgroundColor = '';
-				headerBack.style.transition = '';
-				setTimeout(function(){
-					user.setAttribute('src', 'data/user.svg');
-					phone.setAttribute('src', 'data/phone.svg');
-					heart.setAttribute('src', 'data/heart.svg');
-					cart.setAttribute('src', 'data/cart.svg');
-				}, 300)
-			}
-		});
+	for (var i = 1; i < 8; i += 2){
+		if (i != 5){
+			headerButtons[i].addEventListener('click', function(){
+				if (!isOpen){
+					isOpen = true;
+					header.classList.add('header-open');
+					headerBack.style.backgroundColor = '#FFFFFF';
+					headerBack.style.transition = '0s';
+					user.setAttribute('src', 'data/user-dark.svg');
+					phone.setAttribute('src', 'data/phone-dark.svg');
+					heart.setAttribute('src', 'data/heart-dark.svg');
+					cart.setAttribute('src', 'data/cart-dark.svg');
+					home.setAttribute('src', 'data/home-dark.svg');
+				}else{
+					isOpen = false;
+					header.classList.remove('header-open');
+					headerBack.style.backgroundColor = '';
+					headerBack.style.transition = '';
+					setTimeout(function(){
+						user.setAttribute('src', 'data/user.svg');
+						phone.setAttribute('src', 'data/phone.svg');
+						heart.setAttribute('src', 'data/heart.svg');
+						cart.setAttribute('src', 'data/cart.svg');
+						home.setAttribute('src', 'data/home.svg');
+					}, 300)
+				}
+			});
+		}
 	}
 
 	header.onmouseleave = function(){
@@ -75,9 +82,10 @@ function expandAnimMobile () {
 		artistsText = document.createElement('p');
 		categoriesText = document.createElement('p');
 		
-		document.getElementById('user').setAttribute('src', 'data/user-dark.svg');
-		document.getElementById('heart').setAttribute('src', 'data/heart-dark.svg');
-		document.getElementById('cart').setAttribute('src', 'data/cart-dark.svg');
+		user.setAttribute('src', 'data/user-dark.svg');
+		heart.setAttribute('src', 'data/heart-dark.svg');
+		cart.setAttribute('src', 'data/cart-dark.svg');
+		home.setAttribute('src', 'data/home-dark.svg');
 
 	categoriesText.className = 'head-text h';
 	artistsText.className = 'head-text h';
@@ -93,20 +101,26 @@ function expandAnimMobile () {
 			artistsBlock.prepend(artistsText);
 			categoriesBlock.prepend(categoriesText);
 			onClickClose(header);
-			for (var i of svgMain){
-				i.style.display  = 'block';
-			}
+			for (var i = 0; i < 6; i++){
+				if (i != 1){
+					svgMain[i].style.display  = 'block';
+				};
+			};
+			disableScroll();
 		}
 		else{              //with close
 			header.removeAttribute('id', 'mobile');
 			headerOverlay.removeAttribute('id', 'header-overlay');
 			header.style.zIndex = '4';
-			for (var i of svgMain){
-				i.style.display  = 'none';
-			}
-		}
-	})
-}
+			for (var i = 0; i < 6; i++){
+				if (i != 1){
+					svgMain[i].style.display  = 'none';
+				};
+			};
+			enableScroll();
+		};
+	});
+};
 
 //Close menu
 
@@ -120,6 +134,6 @@ function onClickClose(elem) { // вызвать в момент показа о�
 			}
             document.removeEventListener('click', outsideClickListener);
         }
-    }
+    };
     document.addEventListener('click', outsideClickListener);
-}
+};

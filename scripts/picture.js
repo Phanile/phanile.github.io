@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', function(){
 	enableOpenPicture();
 	enableOpenButtons();
 	enableOpenBuy();
+
+	if (window.innerWidth < 576) {
+		changeChoiseBtns();
+	}
 });
 
 function disableScroll() { 
@@ -152,3 +156,10 @@ function enableOpenBuy () {
 		nextBtn.display = ''
 	};
 };
+
+function changeChoiseBtns () {
+	var buttons = document.getElementsByClassName('choise-btn');
+
+	buttons[0].innerHTML = 'continue'
+	buttons[1].innerHTML = 'to cart'
+}
