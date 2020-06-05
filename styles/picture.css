@@ -17,6 +17,7 @@ a:hover{
 	height: 600px;
 	box-shadow: 0 2px 12px 0 rgba(0,0,0,0.6);
 	cursor: zoom-in;
+	position: relative;
 }
 
 #title{
@@ -396,7 +397,7 @@ a:hover{
 	}
 
 	.subtitle-block{
-		width: 290px;
+		width: 100%;
 		font-size: 17px;
 	}
 

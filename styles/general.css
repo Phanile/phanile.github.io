@@ -91,6 +91,10 @@ h1{
 		cursor: pointer;
 	}
 
+	#heart{
+		height: 28px;
+	}
+
 #header-line{
 	margin-top: 0px;
 	margin-bottom: 0px;

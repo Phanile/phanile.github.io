@@ -294,6 +294,121 @@
 		z-index: 4;
 	}
 
+/*----------------------------------Reviews-----------------------------------------*/
+
+#reviews{
+	margin-top: 80px;
+}
+
+#reviews-title{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+}
+
+.write-comment{
+	max-height: 0px;
+	overflow: hidden;
+}
+
+.write-comment textarea{
+	width: 100%;
+	height: 150px;
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: 3px;
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+	line-height: 20px;
+	font-weight: 300;
+	letter-spacing: .2px;
+	margin-left: auto;
+	cursor: pointer;
+	cursor: text;
+	padding: 5px;
+	box-shadow: inset 0 1px 5px 0 rgba(0,0,0,0.06);
+}
+
+.write-comment-open{
+	max-height: 500px;
+	transition: 1s ease-out;
+}
+
+#reviews-title p{
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+	font-weight: 300;
+	margin-left: auto;
+	cursor: pointer;
+}
+
+#reviews-title p:hover{
+	color: #F79753;
+}
+
+#postbtn{
+	height: 42px;
+	width: 120px;
+	margin-left: auto;
+	font-family: Bebas Neue Bold;
+	font-size: 28px;
+	line-height: 48px;
+	color: #FFFFFF;
+	background-color: #424242;
+	border-radius: 7px;
+	text-align: center;
+	cursor: pointer;
+	transition: .35s ease-out;
+}
+
+#postbtn:hover{
+	width: 142px;
+	transition: .35s ease-in-out;
+	letter-spacing: 1px;
+}
+
+#postbtn:active{
+	width: 138px;
+	transition: .1s ease-in-out;
+	letter-spacing: normal;
+}
+
+#comments{
+	margin-top: 40px;
+}
+
+#reviews h2{
+	font-size: 30px;
+	font-family: Bebas Neue Bold;
+}
+
+.comment{
+	margin-top: 20px;
+	color: rgba(0,0,0,.65);
+}
+
+#reviews h2{
+	color: inherit;
+}
+
+.comment-text{
+	padding: 5px;
+	padding-left: 15px;
+	border-left: 1px solid rgba(0,0,0,.2);
+	font-family: 'Nunito', sans-serif;
+	font-size: 18px;
+	color: #212529;
+}
+
+@media only screen and (max-width: 576px){
+	.write-comment-mobile{
+		max-height: 500px;
+	}
+
+	#reviews-title p{
+		display: none;
+	}
+}
+
 /*----------------------------------Text-----------------------------------------*/
 
 @media only screen and (max-width: 768px) {

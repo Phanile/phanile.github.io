@@ -48,6 +48,7 @@
 				headerBack.style.transition = '';
 				setTimeout(function(){
 					user.setAttribute('src', 'data/user.svg');
+					home.setAttribute('src', 'data/home.svg');
 					phone.setAttribute('src', 'data/phone.svg');
 					heart.setAttribute('src', 'data/heart.svg');
 					cart.setAttribute('src', 'data/cart.svg');
@@ -230,7 +231,7 @@
 <!----------------------------------------Categories---------------------------------------->
 
 	<div class='container' id='categories'>
-		<h2>CATEGORIES</h2>
+		<h1>CATEGORIES</h1>
 		<div class="row">
 			<div class="col-md-3"><a href="category.html"><div class="category-card" style="background-image: url(data/landscape.jpg);"><p class="categories-name">landscape</p></div></a></div>
 			<div class="col-md-3"><a href="#"><div class="category-card" style="background-image: url(data/abstract.jpg);"><p class="categories-name">abstract</p></div></a></div>
@@ -252,7 +253,7 @@
 <!----------------------------------------Our choise---------------------------------------->
 
 	<div class='container' id='choise'>
-		<h2>OUR CHOISE</h2>
+		<h1>OUR CHOISE</h1>
 			<div class="container picture">
 				<a href="picture.html" class="a-full"></a>
 				<div class="overlay">
@@ -267,8 +268,35 @@
 
 <!----------------------------------------Reviews---------------------------------------->
 
-	<div>
-		
+	<div class="container" id="reviews">
+		<div id="reviews-title">
+			<h1>Comments</h1>
+			<p id="write-comment-btn">write a comment...</p>
+		</div>
+		<div class="write-comment write-comment-mobile">
+		<textarea></textarea>
+		<div id="postbtn">Post</div>
+		</div>
+		<div id="comments">
+			<div class="comment">
+				<h2>Roman Rogulenko</h2>
+				<div class="comment-text">
+					<p>Обманули на бабки!</p>
+				</div>
+			</div>
+			<div class="comment">
+				<h2>Alexey Navalny</h2>
+				<div class="comment-text">
+					<p>Эти люди люди обманывают на деньги обычных обывателей мадагаскарского полуострова. Создатели этого чертового сайта считают себя богами, создателями сайта и мира сего. Не лукавля скажу, что я сам не способен выдержать такой агрессии со стороны разработчиков. Самое страшное оскорбление, по-моему, скромному, мнению, вы как Владимир Владимирович Собянин, не способны оценить народное достояние и вообще, идите нахер.</p>
+				</div>
+			</div>
+			<div class="comment">
+				<h2>Pasha Vasilyev</h2>
+				<div class="comment-text">
+					<p>Вчера я съел говно. Я не знаю кому это рассказать, но я не могу это больше держать в себе, поэтому вы, читающие мой комментарий, пожалуйста, не презирайте меня. Это мое желание, это моя жизнь, мне кажется, я могу делать с ней все, что захочу. Мне не нужна психологическая помощь. Мне кажется, я хочу просто с кем-то поговорить. Если ты, читающий этот комментарий, не безразличен к другим людям, пожалуйста, напиши мне. Я хочу поговорить. Мы можем поесть говна вместе.</p>
+				</div>
+			</div>
+		</div>
 	</div>
 
 <!----------------------------------------Footer---------------------------------------->
