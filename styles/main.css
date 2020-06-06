@@ -331,6 +331,8 @@
 .write-comment-open{
 	max-height: 500px;
 	transition: 1s ease-out;
+	display: flex;
+	flex-direction: column;
 }
 
 #reviews-title p{
@@ -358,18 +360,26 @@
 	text-align: center;
 	cursor: pointer;
 	transition: .35s ease-out;
+	border: 0px solid;
 }
 
 #postbtn:hover{
 	width: 142px;
 	transition: .35s ease-in-out;
 	letter-spacing: 1px;
+	border: 0px solid;
 }
 
 #postbtn:active{
 	width: 138px;
 	transition: .1s ease-in-out;
 	letter-spacing: normal;
+	border: 0px solid;
+}
+
+#postbtn:focus{
+	border: 0px solid;
+	outline: none;
 }
 
 #comments{

@@ -92,6 +92,8 @@
 
 .cat-a-svg{
 	margin-left: auto;
+	z-index: 6;
+	cursor: pointer;
 }
 
 .cat-a{
