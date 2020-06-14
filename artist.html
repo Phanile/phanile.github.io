@@ -6,6 +6,15 @@
 	<script type="text/javascript" >
 		document.addEventListener('DOMContentLoaded', function(){
 			headerAnimation();
+
+			footer.onclick = function (event) {
+				console.log(event.target.id)
+				if (event.target.id == 'en'){
+					changeLang('en')
+				} else if (event.target.id == 'ru'){
+					changeLang('ru')
+				}
+			}
 		});
 
 		function headerAnimation () {
@@ -14,6 +23,8 @@
 			}
 			else{
 				expandAnimMobile();
+				choiseLink = document.getElementsByClassName('a-full')[0];
+				choiseLink.setAttribute('id', 'a-full');
 			}
 		}
 
@@ -44,18 +55,18 @@
 				headerBack.style.transition = '';
 				setTimeout(function(){
 					user.setAttribute('src', 'data/user.svg');
+					home.setAttribute('src', 'data/home.svg');
 					phone.setAttribute('src', 'data/phone.svg');
 					heart.setAttribute('src', 'data/heart.svg');
 					cart.setAttribute('src', 'data/cart.svg');
-					home.setAttribute('src', 'data/home.svg');
 				}, 300)
 			}
 
 			scrollUpdate()
 
 			
-			for (var i = 1; i < 8; i += 2){
-				if (i != 5){
+			for (var i = 1; i < 12; i += 2){
+				if (i != 9){
 					headerButtons[i].addEventListener('click', function(){
 						if (!isOpen){
 							isOpen = true;
@@ -83,7 +94,7 @@
 					});
 				}
 			}
-			
+
 			header.onmouseleave = function(){
 				menuClose();
 				scrollUpdate()
@@ -159,6 +170,23 @@
 		    }
 		    document.addEventListener('click', outsideClickListener);
 		}
+
+		function changeLang (to) {
+			var ru = document.getElementsByClassName('ru'),
+				en = document.getElementsByClassName('en');
+
+			if (to == 'ru'){
+				for (var i = 0; i < ru.length; i++){
+					en[i].style.display = 'none';
+					ru[i].style.display = 'block';
+				}
+			} else{
+				for (var i = 0; i < ru.length; i++){
+					ru[i].style.display = 'none';
+					en[i].style.display = 'block';
+				}
+			}
+		}
 	</script>
 	<script type="text/javascript" src="scripts/artist.js"></script>
 	<script type="text/javascript" src="scripts/category.js"></script>
@@ -180,8 +208,10 @@
 			<div class="menu-block"></div>
 		</button>
 		<div class="container" id="header">
-			<h3>Categories</h3>
-			<h3>Artists</h3>
+			<h3 class="en">Categories</h3>
+			<h3 class="ru" style="display: none;">Категории</h3>
+			<h3 class="en">Artists</h3>
+			<h3 class="ru" style="display: none;">Художники</h3>
 			<a href="index.html" class="a-icon home"><img class="header-icon" id="home" src="data/home.svg" /></a>
 			<a class="a-icon phone"><img class="header-icon" id="phone" src="data/phone.svg"/></a>
 			<a href="user.html" class="a-icon"><img class="header-icon" id="user" src="data/user.svg"/></a>
@@ -230,11 +260,21 @@
 
 	<div class="container" id="middle">
 		<div id="title">
-			<div id="title-h1"><h1>Popular works</h1></div>
+			<div id="title-h1">
+				<h1 class="en">Popular works</h1>
+				<h1 class="ru" style="display: none;">Популярные работы</h1>
+			</div>
 			<div id="sort-block">
-				<p id="sort">sort by:</p>
-				<div id="sort-by-price" class="sort"><p>price<img id="sort-by-price-icon" class="sort-img" src="data/sort-none.svg" /></p></div>
-				<div id="sort-by-update" class="sort"><p>update<img id="sort-by-update-icon" class="sort-img" src="data/sort-none.svg" /></p></div>
+				<p class="en sort-abc">sort by:</p>
+				<p class="ru sort-abc" style="display: none;">сортировать по:</p>
+				<div id="sort-by-price" class="sort">
+					<p class="en">price<img id="sort-by-price-icon" class="sort-img" src="data/sort-none.svg" /></p>
+					<p class="ru" style="display: none;">цена<img id="sort-by-price-icon" class="sort-img" src="data/sort-none.svg" /></p>
+				</div>
+				<div id="sort-by-update" class="sort">
+					<p class="en">update<img id="sort-by-update-icon" class="sort-img" src="data/sort-none.svg" /></p>
+					<p class="ru" style="display: none;">посление<img id="sort-by-update-icon" class="sort-img" src="data/sort-none.svg" /></p>
+				</div>
 			</div>
 		</div>
 		<div id="catalog">
@@ -340,14 +380,18 @@
 		<div class="container content">
 			<div class="row">
 				<div class="col-md-4 non-mobile">
-					<p href="" class="first">Language: <span>En</span> <span>Ru</span></p>
-					<a href="#">About us</a>
-					<a href="#">Privacy policy</a>
+					<p href="" class="first en">Language: <span id="en">En</span> <span id="ru">Ru</span></p>
+					<p href="" class="first ru" style="display: none;">Язык: <span id="en">En</span> <span id="ru">Ru</span></p>
+					<a class="en" href="#">About us</a>
+					<a class="ru" style="display: none;" href="#">Про нас</a>
+					<a class="en" href="#">Privacy policy</a>
+					<a class="ru" style="display: none;" href="#">Политика конфиденциальности</a>
 					<a href="index.html" id="name">RussArt©</a>
 				</div>
 				<div class="col-md-2"></div>
 				<div class="col-md-3">
-					<h3 class="first">Contact us</h3>
+					<h3 class="first en">Contact us</h3>
+					<h3 class="first ru" style="display: none;">Связаться с нами</h3>
 					<a href="tel:+79871260069">+7-968-665-04-83</a>
 					<a href="tel:+79278515414">+7-932-589-34-28</a>
 					<a href="mailto:sayfulloev0472@gmail.com">russianart@gmail.com</a>
@@ -377,7 +421,8 @@
 					</div>
 				</div>
 				<div class="col-md-3 non-mobile">
-					<h3 class="first">We accept</h3>
+					<h3 class="first en">We accept</h3>
+					<h3 class="first ru" style="display: none;">Мы принимаем</h3>
 					<div class="webmoney icon check">
 						<svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 						width="20" height="20"

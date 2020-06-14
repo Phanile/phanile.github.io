@@ -38,13 +38,22 @@ function commentsColor() {
 
 function commentOpenEnable() {
 	var text = document.getElementsByClassName('write-comment')[0],
-		btn = document.getElementById('write-comment-btn');
+		btn = document.getElementsByClassName('write-comment-btn');
 
-	btn.addEventListener('click', function(){
+	console.log(btn = document.getElementsByClassName('write-comment-btn'))
+	btn[0].addEventListener('click', function(){
 		text.classList.add('write-comment-open');
 	});
 
-	btn.removeEventListener('click', function(){
+	btn[0].removeEventListener('click', function(){
+		text.classList.add('write-comment-open');
+	});
+
+	btn[1].addEventListener('click', function(){
+		text.classList.add('write-comment-open');
+	});
+
+	btn[1].removeEventListener('click', function(){
 		text.classList.add('write-comment-open');
 	});
 };

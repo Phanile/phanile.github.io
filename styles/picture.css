@@ -62,12 +62,24 @@ a:hover{
 	display: block;
 }
 
-#btn-cart{
+.btn-cart{
 	background-color: #F79753;
 	margin-left: auto;
 }
+
+#btn-cart-ru{
+	font-size: 22px;
+}
+
+#fav-btn{
+	width: 48px;
+	margin-top: 4px;
+}
+
+
 #btn-buy{
 	background-color: #424242;
+	width: 64px;
 }
 
 /* Subtitle */
@@ -119,6 +131,7 @@ a:hover{
 .subtitle-block span{
 	letter-spacing: .8px;
 	font-weight: 600;
+	display: inline;
 }
 
 .subtitle-block li{

@@ -210,7 +210,7 @@
 
 	#choise .picture{
 		background-image: url(../data/esmerald.jpg);
-		background-position: center top;
+		background-position: center center;
 		background-size: cover;
 		background-repeat: no-repeat;
 		height: 215px;
@@ -347,7 +347,7 @@
 	color: #F79753;
 }
 
-#postbtn{
+.postbtn{
 	height: 42px;
 	width: 120px;
 	margin-left: auto;
@@ -363,21 +363,21 @@
 	border: 0px solid;
 }
 
-#postbtn:hover{
+.postbtn:hover{
 	width: 142px;
 	transition: .35s ease-in-out;
 	letter-spacing: 1px;
 	border: 0px solid;
 }
 
-#postbtn:active{
+.postbtn:active{
 	width: 138px;
 	transition: .1s ease-in-out;
 	letter-spacing: normal;
 	border: 0px solid;
 }
 
-#postbtn:focus{
+.postbtn:focus{
 	border: 0px solid;
 	outline: none;
 }

@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', function(){
 	headerAnimation();
+
+	footer.onclick = function (event) {
+		changeLang(event.target.id)
+	}
 });
 
 function headerAnimation () {
@@ -35,8 +39,8 @@ function expandAnim () {
 		}, 300)
 	}	
 	
-	for (var i = 1; i < 8; i += 2){
-		if (i != 5){
+	for (var i = 1; i < 12; i += 2){
+		if (i != 9){
 			headerButtons[i].addEventListener('click', function(){
 				if (!isOpen){
 					isOpen = true;
@@ -137,3 +141,28 @@ function onClickClose(elem) { // вызвать в момент показа о�
     };
     document.addEventListener('click', outsideClickListener);
 };
+
+function changeLang (to) {
+	var ru = document.getElementsByClassName('ru'),
+		en = document.getElementsByClassName('en');
+
+	for (var i = 0; i < ru.length; i++){
+		if (to == 'ru'){
+			if (ru[i].tagName == 'SPAN'){
+				en[i].style.display = 'none';
+				ru[i].style.display = 'inline';
+			} else{
+				en[i].style.display = 'none';
+				ru[i].style.display = 'block';
+			}
+		} else{
+			if (en[i].tagName == 'SPAN'){
+				ru[i].style.display = 'none';
+				en[i].style.display = 'inline';
+			} else{
+				ru[i].style.display = 'none';
+				en[i].style.display = 'block';
+			}
+		}
+	}
+}

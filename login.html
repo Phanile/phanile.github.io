@@ -22,8 +22,10 @@
 			<div class="menu-block"></div>
 		</button>
 		<div class="container" id="header">
-			<h3>Categories</h3>
-			<h3>Artists</h3>
+			<h3 class="en">Categories</h3>
+			<h3 class="ru" style="display: none;">Категории</h3>
+			<h3 class="en">Artists</h3>
+			<h3 class="ru" style="display: none;">Художники</h3>
 			<a href="index.html" class="a-icon home"><img class="header-icon" id="home" src="data/home.svg" /></a>
 			<a class="a-icon phone"><img class="header-icon" id="phone" src="data/phone.svg"/></a>
 			<a href="user.html" class="a-icon"><img class="header-icon" id="user" src="data/user.svg"/></a>
@@ -60,57 +62,71 @@
 
 <!----------------------------------------Middle---------------------------------------->
 
-<div class="container" id="middle">
-	<div id="reg">
-		<div id="title">
-			<h1>Login</h1>
-			<p>If you haven't got an account you can create it right now. Just fill your name and email, create a password, and click the register button.</p>
-		</div>
-		<div id="input-block">
-			<form>
-				<h2>Register</h2>
-				<label class="first" for="username">Name</label>
-				<input id="username" type="text" required />
-				<label for="email">Email</label>
-				<input id="email" type="email" required />
-				<label for="password">Password</label>
-				<input id="password" type="password" maxlength="20" minlength="6" required />
-				<label for="password">Confirm password</label>
-				<input id="password" type="password" maxlength="20" minlength="6" required />
-				<div id="buttons-block">
-					<a href="user.html"><input id="register-btn" class="button" type="submit" value="Register" /></a>
-				</div>
-			</form>
+	<div class="container" id="middle">
+		<div id="reg">
+			<div id="title">
+				<h1 class="en">Login</h1>
+				<h1 class="ru" style="display: none;">Вход в аккаунт</h1>
+				<p class="en">If you haven't got an account you can create it right now. Just fill your name and email, create a password, and click the register button.</p>
+				<p class="ru" style="display: none;">Если у вас нет аккаунта, вы можете создать его прямо сейчас. Просто заполните свое имя и адрес электронной почты, создайте пароль и нажмите кнопку регистрации.</p>
+			</div>
+			<div id="input-block">
+				<form>
+					<label class="first en" for="username">Name</label>
+					<label class="first ru" style="display: none;" for="username">Имя</label>
+					<input id="username" type="text" required />
+					<label for="email">Email</label>
+					<input id="email" type="email" required />
+					<label for="password" class="en">Password</label>
+					<label for="password" class="ru" style="display: none;">Пароль</label>
+					<input id="password" type="password" maxlength="20" minlength="6" required />
+					<label for="password" class="en">Confirm password</label>
+					<label for="password" class="ru" style="display: none;">Подтверждение пароля</label>
+					<input id="password" type="password" maxlength="20" minlength="6" required />
+					<div id="buttons-block">
+						<a href="user.html">
+							<input class="button register-btn en" type="submit" value="Register" />
+							<input class="button register-btn ru" style="display: none;" type="submit" value="Регистрация" />
+						</a>
+					</div>
+				</form>
 
-			<div id="line"></div>
+				<div id="line"></div>
 
-			<form>
-				<h2>Login</h2>
-				<label class="first" for="email">Email</label>
-				<input id="email" type="email" required />
-				<label for="password">Password</label>
-				<input id="password" type="password" maxlength="20" minlength="6" required />
-				<div id="buttons-block">
-					<a href="user.html"><input id="login-btn" class="button" type="submit" value="Login" /></a>
-				</div>
-			</form>
+				<form>
+					<label class="first" for="email">Email</label>
+					<input id="email" type="email" required />
+					<label for="password" class="en">Password</label>
+					<label for="password" class="ru" style="display: none;">Пароль</label>
+					<input id="password" type="password" maxlength="20" minlength="6" required />
+					<div id="buttons-block">
+						<a href="user.html">
+							<input  class="button login-btn en" type="submit" value="Login" />
+							<input class="button login-btn ru" style="display: none;" type="submit" value="Вход" />
+						</a>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
-</div>
 
 <!----------------------------------------Footer---------------------------------------->
 	<div class='container-fluid' id="footer">
 		<div class="container content">
 			<div class="row">
 				<div class="col-md-4 non-mobile">
-					<p href="" class="first">Language: <span>En</span> <span>Ru</span></p>
-					<a href="#">About us</a>
-					<a href="#">Privacy policy</a>
+					<p href="" class="first en">Language: <span id="en">En</span> <span id="ru">Ru</span></p>
+					<p href="" class="first ru" style="display: none;">Язык: <span id="en">En</span> <span id="ru">Ru</span></p>
+					<a class="en" href="#">About us</a>
+					<a class="ru" style="display: none;" href="#">Про нас</a>
+					<a class="en" href="#">Privacy policy</a>
+					<a class="ru" style="display: none;" href="#">Политика конфиденциальности</a>
 					<a href="index.html" id="name">RussArt©</a>
 				</div>
 				<div class="col-md-2"></div>
 				<div class="col-md-3">
-					<h3 class="first">Contact us</h3>
+					<h3 class="first en">Contact us</h3>
+					<h3 class="first ru" style="display: none;">Связаться с нами</h3>
 					<a href="tel:+79871260069">+7-968-665-04-83</a>
 					<a href="tel:+79278515414">+7-932-589-34-28</a>
 					<a href="mailto:sayfulloev0472@gmail.com">russianart@gmail.com</a>
@@ -140,7 +156,8 @@
 					</div>
 				</div>
 				<div class="col-md-3 non-mobile">
-					<h3 class="first">We accept</h3>
+					<h3 class="first en">We accept</h3>
+					<h3 class="first ru" style="display: none;">Мы принимаем</h3>
 					<div class="webmoney icon check">
 						<svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 						width="20" height="20"

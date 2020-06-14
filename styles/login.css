@@ -99,11 +99,11 @@ input::-ms-input-placeholder{
 	transition: all .05s;
 }
 
-#register-btn{
+.register-btn{
 	background-color: #F79753;
 }
 
-#login-btn{
+.login-btn{
 	background-color: #424242;
 }
 

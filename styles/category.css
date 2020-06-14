@@ -24,7 +24,7 @@
 	width: auto;
 }
 
-#sort{
+.sort-abc{
 	color: #1C1C1C;
 	font-weight: 600;
 }
@@ -206,7 +206,7 @@ a:hover{
 	}
 
 	#sort-block{
-		font-size: 16px;
+		font-size: 15px;
 	}
 }
 

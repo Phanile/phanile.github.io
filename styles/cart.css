@@ -201,7 +201,7 @@
 	border-top: 1px solid rgba(0,0,0,.2);
 }
 
-.open-pop-up #next-btn{
+.open-pop-up .next-btn{
 	background-color: #F79753;
 	margin-left: 0px;
 	margin-top: auto;
@@ -294,6 +294,13 @@
 .open-pop-up #hyphen{
 	margin-left: auto;
 	line-height: 36px;
+}
+
+.open-pop-up .text{
+	margin-bottom: 10px;
+	font-size: 18px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 300;
 }
 
 @media only screen and (max-width: 767px){

@@ -23,8 +23,10 @@
 			<div class="menu-block"></div>
 		</button>
 		<div class="container" id="header">
-			<h3>Categories</h3>
-			<h3>Artists</h3>
+			<h3 class="en">Categories</h3>
+			<h3 class="ru" style="display: none;">Категории</h3>
+			<h3 class="en">Artists</h3>
+			<h3 class="ru" style="display: none;">Художники</h3>
 			<a href="index.html" class="a-icon home"><img class="header-icon" id="home" src="data/home.svg" /></a>
 			<a class="a-icon phone"><img class="header-icon" id="phone" src="data/phone.svg"/></a>
 			<a href="user.html" class="a-icon"><img class="header-icon" id="user" src="data/user.svg"/></a>
@@ -63,18 +65,18 @@
 
 	<div id="middle" class="container">
 		<div id="title">
-			<div id="title-h1"><h1>Favorites</h1></div>
+			<div id="title-h1">
+				<h1 class="en">Cart</h1>
+				<h1 class="ru" style="display: none;">Корзина</h1>
+			</div>
 		</div>
 
 		<div id="cart-cards">
-			<a href="#">
 				<div class="row cart-card">
-					<div class="col-md-4 cart-img for-anim" style="background-image: url(data/esmerald.jpg)"></div>
-					<div class="col-md-5 cart-text for-anim"><h1>Esmerald</h1></div>
-					<div class="col-md-3 cart-price"><h2>$1299</h2><img class="del-icon" src="data/bin.svg"></div>
+					<div class="col-md-4 cart-img for-anim" style="background-image: url(data/esmerald.jpg)"><a href="#" class="full-a"></div>
+					<div class="col-md-5 cart-text for-anim"><a href="#" style="width: 100%"><h1>Esmerald</h1></a></div>
+					<div class="col-md-3 cart-price"><h2>$1299</h2><a href="kek"><img class="del-icon" src="data/bin.svg"></a></div>
 				</div>
-			</a>
-
 			<a href="#">
 				<div class="row cart-card">
 					<div class="col-md-4 cart-img for-anim" style="background-image: url(data/card-5.jpg)"></div>
@@ -101,7 +103,10 @@
 		</div>
 
 		<div id="total">
-			<a href="cart.html"><div class="button" id="checkout-btn" style="background-color: #F79753;">To cart</div></a>
+			<a href="cart.html">
+				<div class="button en" id="checkout-btn" style="background-color: #F79753;">To cart</div>
+				<div class="button ru" style="display: none; background-color: #F79753;" id="checkout-btn">К корзине</div>
+			</a>
 		</div>
 	</div>
 
@@ -110,14 +115,18 @@
 		<div class="container content">
 			<div class="row">
 				<div class="col-md-4 non-mobile">
-					<p href="" class="first">Language: <span>En</span> <span>Ru</span></p>
-					<a href="#">About us</a>
-					<a href="#">Privacy policy</a>
+					<p href="" class="first en">Language: <span id="en">En</span> <span id="ru">Ru</span></p>
+					<p href="" class="first ru" style="display: none;">Язык: <span id="en">En</span> <span id="ru">Ru</span></p>
+					<a class="en" href="#">About us</a>
+					<a class="ru" style="display: none;" href="#">Про нас</a>
+					<a class="en" href="#">Privacy policy</a>
+					<a class="ru" style="display: none;" href="#">Политика конфиденциальности</a>
 					<a href="index.html" id="name">RussArt©</a>
 				</div>
 				<div class="col-md-2"></div>
 				<div class="col-md-3">
-					<h3 class="first">Contact us</h3>
+					<h3 class="first en">Contact us</h3>
+					<h3 class="first ru" style="display: none;">Связаться с нами</h3>
 					<a href="tel:+79871260069">+7-968-665-04-83</a>
 					<a href="tel:+79278515414">+7-932-589-34-28</a>
 					<a href="mailto:sayfulloev0472@gmail.com">russianart@gmail.com</a>
@@ -147,7 +156,8 @@
 					</div>
 				</div>
 				<div class="col-md-3 non-mobile">
-					<h3 class="first">We accept</h3>
+					<h3 class="first en">We accept</h3>
+					<h3 class="first ru" style="display: none;">Мы принимаем</h3>
 					<div class="webmoney icon check">
 						<svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 						width="20" height="20"

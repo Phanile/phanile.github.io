@@ -8,6 +8,23 @@
 	<script type="text/javascript" src='scripts/general.js'></script>
 	<link rel="stylesheet" type="text/css" href="styles/general.css">
 	<link rel="stylesheet" type="text/css" href="styles/user.css">
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function(){
+			var check = document.getElementsByClassName('wrap')[0],
+				btn = document.getElementById('message-btn');
+
+			btn.addEventListener('click', function(){
+				if(message.value){
+					check.style.top = '12px';
+					check.style.opacity = '1';
+					setTimeout(function(){
+						check.style.top = '';
+						check.style.opacity = '';
+					}, 2000)
+				}
+			})
+		})
+	</script>
 </head>
 
 <body>
@@ -22,8 +39,10 @@
 			<div class="menu-block"></div>
 		</button>
 		<div class="container" id="header">
-			<h3>Categories</h3>
-			<h3>Artists</h3>
+			<h3 class="en">Categories</h3>
+			<h3 class="ru" style="display: none;">Категории</h3>
+			<h3 class="en">Artists</h3>
+			<h3 class="ru" style="display: none;">Художники</h3>
 			<a href="index.html" class="a-icon home"><img class="header-icon" id="home" src="data/home.svg" /></a>
 			<a class="a-icon phone"><img class="header-icon" id="phone" src="data/phone.svg"/></a>
 			<a href="user.html" class="a-icon"><img class="header-icon" id="user" src="data/user.svg"/></a>
@@ -60,55 +79,75 @@
 
 <!----------------------------------------Middle---------------------------------------->
 
-<div class="container" id="middle">
-	<div id="reg">
-		<div id="title">
-			<h1>My account</h1>
-		</div>
-		<div id="input-block">
-			<form>
-				<h2>Settings</h2>
-				<label class="first" for="username">Name</label>
-					<input id="username" type="text" value="Verachill" required />
-				<label for="email">Email</label>
-					<input id="email" type="email" value="roman_rogulenko_228@mail.ru" required />
-				<label for="password">New password</label>
-					<input id="password" type="password" maxlength="20" minlength="6" />
-				<label for="confirm-password">Confirm password</label>
-					<input id="confirm-password" type="password" maxlength="20" minlength="6" />
-				<div id="buttons-block">
-					<a href="user.html"><input id="register-btn" class="button" type="submit" value="Save changings" /></a>
-					<a href="user.html"><div id="leave-btn" class="button" />Leave account</div></a>
-				</div>
-			</form>
-
-			<div id="line"></div>
-
-			<div id="pseudo-form">
-				<h2>Contact us</h2>
-				<p>You can help us become better. Write us suggestions for service improvements. If you are ready to cooperate with us or offer us your services, we are always happy to help.</p>
-				<form id="textarea-form">
-					<textarea maxlength="1000" id="message"></textarea>
-					<input id="message-btn" class="button" type="submit" value="Send" />
+	<div class="container" id="middle">
+		<div id="reg">
+			<div id="title">
+				<h1 class="en">My account</h1>
+				<h1 class="ru" style="display: none">Мой аккаунт</h1>
+			</div>
+			<div id="input-block">
+				<form>
+					<h2 class="en">Settings</h2>
+					<h2 class="ru" style="display: none;">Настройки</h2>
+					<label class="first en" for="username">Name</label>
+					<label class="first ru" style="display: none;" for="username">Имя</label>
+						<input id="username" type="text" value="Verachill" required />
+					<label for="email">Email</label>
+						<input id="email" type="email" value="roman_rogulenko_228@mail.ru" required />
+					<label for="password" class="en">New password</label>
+					<label for="password" class="ru" style="display: none;">Новый пароль</label>
+						<input id="password" type="password" maxlength="20" minlength="6" />
+					<label for="confirm-password" class="en">Confirm password</label>
+					<label for="confirm-password" class="ru" style="display: none;">Подтверждение пароля</label>
+						<input id="confirm-password" type="password" maxlength="20" minlength="6" />
+					<div id="buttons-block">
+						<a href="user.html"><input class="button register-btn en" type="submit" value="Save changings" /></a>
+						<a href="user.html"><input class="button register-btn ru" style="display: none;" type="submit" value="Сохранить" /></a>
+						<a href="user.html"><div class="button leave-btn en" />Leave account</div></a>
+						<a href="user.html"><div class="button leave-btn ru" style="display: none;"/>Покинуть аккаунт</div></a>
+					</div>
 				</form>
+
+				<div id="line"></div>
+
+				<div id="pseudo-form">
+					<h2 class="en">Contact us</h2>
+					<h2 class="ru" style="display: none;">Связаться с нами</h2>
+					<p class="en">You can help us become better. Write us suggestions for service improvements. If you are ready to cooperate with us or offer us your services, we are always happy to help.</p>
+					<p class="ru" style="display: none;">Вы можете помочь развитию сервиса, написав нам ваши предложения по его улучшению. Если вы готовы сотрудничать с нами, мы выслушаем любую вашу просьбу.</p>
+					<form id="textarea-form" action="#">
+						<textarea maxlength="1000" id="message" required></textarea>
+						<div class="message-btn-block">
+							<button class="button message-btn en" type="submit">Send</button>
+							<button class="button message-btn ru" style="display: none" type="submit">Отослать</button>
+							<div class="wrap">
+							    <div id="check-part-1" class="check-sign"></div>
+							    <div id="check-part-2" class="check-sign"></div>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
 <!----------------------------------------Footer---------------------------------------->
 	<div class='container-fluid' id="footer">
 		<div class="container content">
 			<div class="row">
 				<div class="col-md-4 non-mobile">
-					<p href="" class="first">Language: <span>En</span> <span>Ru</span></p>
-					<a href="#">About us</a>
-					<a href="#">Privacy policy</a>
+					<p href="" class="first en">Language: <span id="en">En</span> <span id="ru">Ru</span></p>
+					<p href="" class="first ru" style="display: none;">Язык: <span id="en">En</span> <span id="ru">Ru</span></p>
+					<a class="en" href="#">About us</a>
+					<a class="ru" style="display: none;" href="#">Про нас</a>
+					<a class="en" href="#">Privacy policy</a>
+					<a class="ru" style="display: none;" href="#">Политика конфиденциальности</a>
 					<a href="index.html" id="name">RussArt©</a>
 				</div>
 				<div class="col-md-2"></div>
 				<div class="col-md-3">
-					<h3 class="first">Contact us</h3>
+					<h3 class="first en">Contact us</h3>
+					<h3 class="first ru" style="display: none;">Связаться с нами</h3>
 					<a href="tel:+79871260069">+7-968-665-04-83</a>
 					<a href="tel:+79278515414">+7-932-589-34-28</a>
 					<a href="mailto:sayfulloev0472@gmail.com">russianart@gmail.com</a>
@@ -138,7 +177,8 @@
 					</div>
 				</div>
 				<div class="col-md-3 non-mobile">
-					<h3 class="first">We accept</h3>
+					<h3 class="first en">We accept</h3>
+					<h3 class="first ru" style="display: none;">Мы принимаем</h3>
 					<div class="webmoney icon check">
 						<svg class="icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 						width="20" height="20"
