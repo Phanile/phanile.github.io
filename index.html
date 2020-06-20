@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 	<script type="text/javascript" >
 		document.addEventListener('DOMContentLoaded', function(){
+			changeLang('ru')// ВНАЧАЛЕ ИЗМЕНЕНИЕ ЯЗЫКА, ПОТОМ HEADERANIMATION()
 			headerAnimation();
 
 			footer.onclick = function (event) {
@@ -119,6 +120,11 @@
 				artistsBlock = document.getElementsByClassName('artists')[0];
 				artistsText = document.createElement('p');
 				categoriesText = document.createElement('p');
+				headerH3 = document.getElementsByClassName('header-h3')
+
+			for (elem of headerH3){
+				elem.style.display = 'none'
+			}
 				
 			user.setAttribute('src', 'data/user-dark.svg');
 			heart.setAttribute('src', 'data/heart-dark.svg');
@@ -127,9 +133,12 @@
 
 			categoriesText.className = 'head-text h';
 			artistsText.className = 'head-text h';
+			
+			// ТУТ ПРОВЕРКУ НА КУКИ НАДО ОРГАНИЗОВАТЬ
 			categoriesText.innerHTML = 'Categories';
 			artistsText.innerHTML = 'Artists';
-
+			//
+			
 			button.addEventListener('click', function(){
 				if (header.id != 'mobile'){              //with open
 					header.style.transition = '0s';
@@ -207,10 +216,10 @@
 			<div class="menu-block"></div>
 		</button>
 		<div class="container" id="header">
-			<h3 class="en">Categories</h3>
-			<h3 class="ru" style="display: none;">Категории</h3>
-			<h3 class="en">Artists</h3>
-			<h3 class="ru" style="display: none;">Художники</h3>
+			<h3 class="en header-h3">Categories</h3>
+			<h3 class="ru header-h3" style="display: none;">Категории</h3>
+			<h3 class="en header-h3">Artists</h3>
+			<h3 class="ru header-h3" style="display: none;">Художники</h3>
 			<a href="index.html" class="a-icon home"><img class="header-icon" id="home" src="data/home.svg" /></a>
 			<a class="a-icon phone"><img class="header-icon" id="phone" src="data/phone.svg"/></a>
 			<a href="user.html" class="a-icon"><img class="header-icon" id="user" src="data/user.svg"/></a>
