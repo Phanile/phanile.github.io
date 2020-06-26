@@ -511,22 +511,7 @@ body {
 					margin-top: 8px;
 				}
 
-				@media only screen and (max-width: 767px) {
-					#footer .non-mobile, #footer .col-md-2, #choise .button{
-						display: none;
-					}
-
-					.col-md-3{
-						text-align: center;
-						align-items: center;
-					}
-
-					.icons{
-						width: 100px;
-					}
-				}
-
-				@media only screen and (min-width: 767px) and (max-width: 1199px) {
+				@media only screen and (max-width: 1200px) {
 					#footer a{
 						font-size: 13px;
 						padding-top: 4px;
@@ -535,5 +520,35 @@ body {
 
 					#footer .icons{
 						margin-top: -5px;
+					}
+				}
+
+				@media only screen and (max-width: 768px) {
+					#footer .col-md-2, #footer .non-mobile, #choise .button{
+						display: none;
+					}
+
+					#footer .col-md-4{
+						display: flex;
+						flex-direction: column;
+						text-align: center;
+					}
+
+					#footer, #footer .content{
+						height: auto;
+					}
+
+					#name{
+						display: none;
+					}
+
+					.col-md-3{
+						margin-top: 30px;
+						text-align: center;
+						align-items: center;
+					}
+
+					.icons{
+						width: 100px;
 					}
 				}

@@ -92,8 +92,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	footer.onclick = function (event) {
 		var btn = document.getElementsByClassName('lang')[0];
-
-		console.log(event.target.id)
 		if (event.target.id == 'en'){
 			btn.innerHTML = 'next'
 			changeLang('en')
